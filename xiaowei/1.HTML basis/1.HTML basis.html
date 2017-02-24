@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML basis</title>
+</head>
+<body>
+	<h1 style="margin:0 auto"><a href="https://roading.github.io/">个人博客</a></h1>
+	<div>
+		<h1>标签元素效果</h1>
+		<hr />
+		<h1>1级标题</h1>
+		<h2>2级标题</h2>
+		<h3>3级标题</h3>
+		<h4>4级标题</h4>
+		<h5>5级标题</h5>
+		<h6>6级标题</h6>
+	</div>
+	<h1>文章元素效果</h1>
+	<hr/>
+	<div>
+		<h1>文章1级标题</h1>
+		<h2>文章2级副题</h2>
+		<span>文章作者：</span><em>Firefox MDN</em><br /><span>文章发表时间：</span><b>2017-2-24 18:49:06</b>
+		哈哈上链接吧<p>当你在 web 浏览器中浏览网页时，你看到的最基本的内容是文字。这些文字一般有着一些样式特性，比如不同的文字大小和颜色。在多数情况下，页面还会展示图片或者还可能带有视频；有时候会有一个表单，你可以填写信息（或者搜索内容）；或者可以依据喜好自定义页面的展示效果；页面也经常会带有包含动画效果的内容；页面上有些内容会不断变化而有些内容会保持不变。<a name="maomao" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Introduction">哈哈上链接吧</a>，点击试试！</p><img src="htmlcss.ec85cad580b3bfce.jpg" alt="本地图片显示测试" title="这是它的title属性了" width="500">
+		<p>
+			<img src="http://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/mms-res/fed/ife/ife_tutor/课程配图.3fb31f3e5af7e8d7.jpg" alt="如果出现这个说明被百度坑啦">
+			是时候来一段内容引用了：
+			<blockquote>HTML规范所定义的这种语言，既可以使用较为松散的HTML语法，也可以使用更为严格的XML（Extensible Markup Language 扩展标记语言）语法，同时也解决了Web应用的需求。HTML没有描述内容的样式和格式，只是内容本身和其意义。如果你想要在网站中加入样式和格式，需要通过层叠样式表（CSS）来定义和控制。</blockquote>
+			换个行试试<br>超文本标记语言（HyperText Markup Language）的缩写是<abbr>HTML</abbr>,其定义是<dfn>百度找吧</dfn>，这是<mark>地址</mark>：<a href="https://www.baidu.com">https://www.baidu.com</a><br>
+			<p>内容太多，颠倒点到为止了！</p>
+		</p>
+	</div>
+	<div>
+		<h1>列表内容测试</h1>
+		<hr>
+		<h2>有序列表</h2>
+		<ol>
+			<li>有序列表1</li>
+			<li>有序列表3</li>
+			<li>有序列表2</li>
+		</ol>
+		<ol type="A" start="h">
+			<li>有序列表1</li>
+			<li>有序列表3</li>
+			<li>有序列表2</li>
+		</ol>
+		<ol type="I" start="II">
+			<li>有序列表1</li>
+			<li>有序列表3</li>
+			<li>有序列表2</li>
+		</ol>
+		<h2>无序列表</h2>
+		<ul>
+			<li>无序列表1</li>
+			<li>无序列表2</li>
+			<li>无序列表3</li>
+		</ul>
+		<ul type="circle">
+			<li>无序列表1</li>
+			<li>无序列表2</li>
+			<li>无序列表3</li>
+		</ul>
+		<ul type="square">
+			<li>无序列表1</li>
+			<li>无序列表2</li>
+			<li>无序列表3</li>
+		</ul>
+		<h2>定义列表</h2>
+		<dl>
+			<dt>中国</dt>
+			<dd>中国，是以华夏文明为源泉、中华文化为基础，并以汉族为主体民族的多民族国家，通用汉语、汉字，汉族与少数民族被统称为“中华民族”，又自称为炎黄子孙。</dd>
+			<dt>测试dt</dt>
+			<dd>颠倒dd1</dd>
+			<dd>dd2</dd>
+		</dl>
+	</div>
+	<div>
+		<h1>图片测试了</h1>
+		<hr>
+		<ul type="none">
+			<li>
+				<div>好看的图片</div>
+				<img src="htmlcss.ec85cad580b3bfce.jpg" alt="本地图片显示测试" title="这是它的title属性了" width="250">
+			</li>
+			<li>
+				<span>好看的图片</span>
+				<img src="htmlcss.ec85cad580b3bfce.jpg" alt="本地图片显示测试" title="这是它的title属性了" width="250">
+			</li>
+			<li>
+				<p><strong>图片<mark>映射</mark>测试</strong></p>
+				<img src="./kkk.jpg" alt="本地图片显示测试" title="这是它的title属性了" usemap="haha">
+				<map name="haha">
+					<area shape="rect" coords="8,64,135,180" href="https://developer.mozilla.org/en-US/docs/Web/HTML" alt="Firefox HTML MDN">
+					<area shape="circle" coords="245,125,85" href="https://developer.mozilla.org/en-US/docs/Web/CSS" alt="Firefox CSS MDN">
+				</map>
+			</li>				
+		</ul>
+		<figure>
+	  		<p>黄浦江上的的卢浦大桥</p>
+	  		<img src="qiao.gif" />
+		</figure>
+	</div>
+	<h1>标签链接测试</h1>
+	<hr>
+	<div>
+		小标签：<a href="https://www.baolong.com">baolong</a><br>
+		锚点：<a href="#maomao">返回到本文的第一个a链接处</a><br/>
+		发送邮件：<a href="mailto:funning@yeah.net?cc=test@lll.cc?subject='Hell world'?body='This is my first test program'">没事多叫交流</a>
+	</div>
+	<h1>表格单元测试</h1>
+	<hr>
+	<div>
+		<table border="1">
+		<caption>2013级课程表</caption>
+			<thead>
+				<tr>
+					<th colspan="2" ></th>
+					<th>一</th>
+					<th>二</th>
+					<th>三</th>
+					<th>四</th>
+					<th>五</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr><td colspan="7">不来tfoot不行</td></tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td rowspan="4" bgcolor="yellow">上午</td>
+					<td>1</td>
+					<td>数学</td>
+					<td>语文</td>
+					<td>英语</td>
+					<td>英语</td>
+					<td>数学</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>数学</td>
+					<td>语文</td>
+					<td>英语</td>
+					<td>英语</td>
+					<td>数学</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>数学</td>
+					<td>语文</td>
+					<td>英语</td>
+					<td>英语</td>
+					<td>数学</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>数学</td>
+					<td>语文</td>
+					<td>英语</td>
+					<td>英语</td>
+					<td>数学</td>
+				</tr>
+				<tr>
+					<td colspan="7" align="center"><strong><a href="https://www.baidu.com">中午 午休</a></strong></td>
+				</tr>
+				<tr>
+					<td rowspan="4" bgcolor="lightyellow">下午</td>
+					<td>5</td>
+					<td>数学</td>
+					<td>语文</td>
+					<td>英语</td>
+					<td>英语</td>
+					<td>数学</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>数学</td>
+					<td>语文</td>
+					<td>英语</td>
+					<td>英语</td>
+					<td>数学</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>数学</td>
+					<td>语文</td>
+					<td>英语</td>
+					<td>英语</td>
+					<td>数学</td>
+				</tr>
+				<tr>
+					<td colspan="6" height="30" valign="center" align="center" bgcolor="green" style="color:#fff;font-weight: blod;">自由活动</td>
+				</tr>				
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<h1>表单测试</h1>
+		<hr>
+		<form action="http://www.baidu.com">
+			<input type="text" placeholder="请输入搜索的内容" required>
+			<input type="submit" value="百度一下">
+			<input type="reset">
+		</form>		
+		<label for="name">请输入您的大名：</label>
+		<input id="name" type="text" placeholder="大名"><br>
+		<label>请输入您的密码：<input type="password"></label>
+		<br>
+		<label>测试：</label>
+		<input type="checkbox" name="same" id="i1" value="1"  value=""><label for="i1">慷慨大方</label>
+		<input type="checkbox" name="same" id="i2"  value="2"><label for="i2">慷慨</label>
+		<input type="checkbox" name="same" id="i3"  value="3"><label for="i3">大方</label><br>
+		<label>测试额</label>
+		<input type="radio" name="same1" id="i6" value="11"><label for="i6" value="">慷慨大方</label>
+		<input type="radio" name="same1" id="i7" value="22" checked><label for="i7">慷慨</label>
+		<input type="radio" name="same1" id="i8"  value="33"><label for="i8">大方</label><br>
+		图片上传：<input name="pic" type="file" id="pic" accept="image/gif, image/jpeg"><br>
+		<select name= "country" size= "3" multiple>	
+			<optgroup label="美洲">
+				<option>多伦多</option>
+				<option>温哥华</option>
+				<option旧金山</option>
+			</optgroup >
+			<optgroup label="亚洲">
+				<option>北京</option>
+				<option>首尔</option>
+				<option东京</option>
+			</optgroup >
+		</select>
+		<select name= "country" size= "1">	
+			<option>多伦多</option>
+			<option>温哥华</option>
+			<option旧金山</option>
+		</option>
+		<textarea name="desc" cols="30" rows="5" placeholder="请输入个人简介，不少于800字"></textarea><br>
+		<button>安缪测试</button><br>
+		图片按钮<input type="image" src="button.jpg" width="120"><br>
+	</div>
+	<div>
+		<h1>多媒体元素测试</h1>
+		<hr>
+		<iframe height="300" width="450" src='http://player.youku.com/embed/XMjUyNzYzOTY1Mg==' frameborder=0 allowfullscreen></iframe>
+		<audio autoplay controls>
+			<source src=“./yuanfengjing.mp3” type=“audio/mp3”>
+    		<source src=“./yuanfengjing.ogg” type=“audio/ogg”>
+		</audio>
+	</div>
+<div>版权所有&copy;</div>
+</body>
+</html>
