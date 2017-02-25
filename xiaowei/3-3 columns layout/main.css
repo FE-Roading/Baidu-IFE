@@ -1,17 +1,113 @@
-body,ul{
+body{
 	margin:0;
 	padding:0;
-}
-body{
-	background-color:#111;
 	font-family: Arial,"simson","Microsoft YaHei",Serif;
 }
-.wrap{
-	min-width: 560px;
-	max-width: 960px;
-	margin:0 auto;
-	background-color:#eee;
+img{
+	vertical-align: text-top;
 }
 .blog-url{
 	text-align: center;
+}
+.task-info{
+	margin:0 auto;
+}
+.footer{
+	width: 100px;
+	margin:0 auto;
+}
+.clearfix::after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.container{
+	padding:20px;
+	background-color: #eee;
+	border:1px solid grey;
+	margin:20px;
+}
+.left{
+	padding: 20px;
+	width: 200px;
+	border:1px solid grey;
+	background-color: #fff;
+}
+.left div{
+	margin-bottom: 20px;
+}
+.left div:last-child{
+	margin-bottom: 0;
+}
+
+.left span{
+	padding-left: 1em;
+}
+.right{
+	box-sizing: border-box;
+	width: 120px;
+	padding: 20px;
+	border:1px solid grey;
+	background-color: #fff;
+}
+.right div{
+	margin-bottom: 20px;
+}
+.right div:last-child{
+	margin-bottom: 0;
+}
+.ptitle{
+	margin-left: 3em;
+}
+/*浮动布局*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.center{
+	width: auto;
+	padding: 20px;
+	background-color: #fff;
+	border:1px solid grey;
+}
+.method1 .center{
+	margin:0px 140px 20px 260px ;
+}
+
+/*定位布局*/
+.method2{
+	position: relative;
+}
+.method2 .center{
+	margin:0px 140px 20px 260px ;
+}
+
+.pl{
+	position: absolute;
+	top:20px;
+	left:20px;
+}
+.pr{
+	position: absolute;
+	top:20px;
+	right:20px;
+}
+
+/*负margin布局*/
+.main{
+	float: left;
+	width: 100%;
+}
+.method3 .center{
+	margin:0px 140px 0 260px ;
+}
+.ml{
+	float:left;
+	margin-left: -100%;
+}
+.mr{
+	float:left;
+	margin-left:-120px;
 }
