@@ -81,14 +81,10 @@ function render(data) {
 	var ul=document.getElementById("resort");
 	ul.innerHTML="";
 	for (var i = 0; i < data.length; i++) {
-		if(data[i][1]>=60){
-			var li=document.createElement("li");
-			//  <li>第三名：北京空气质量：<b>90</b></li>
-			li.innerHTML="第 "+(i+1)+"名："+data[i][0]+"空气质量："+"<b>"+data[i][1]+"</b>";
-			ul.appendChild(li);
-		}else{
-			break;
-		}
+		var li=document.createElement("li");
+		//  <li>第三名：北京空气质量：<b>90</b></li>
+		li.innerHTML="第 "+(i+1)+"名："+data[i][0]+"空气质量："+"<b>"+data[i][1]+"</b>";
+		ul.appendChild(li);
 	}
 
 }
