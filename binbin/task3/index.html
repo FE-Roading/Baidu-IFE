@@ -101,7 +101,7 @@ function init() {
   var btn=document.getElementById("sort-btn");
   if(btn.addEventListener){
   	btn.addEventListener("click",btnHandle,false);
-  }else if(bttn.addEvent){
+  }else if(btn.addEvent){
   	btn.addEvent("onclick",btnHandle);
   }else{
   	btn.onclick=btnHandle;
