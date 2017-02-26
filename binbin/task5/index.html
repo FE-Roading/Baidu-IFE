@@ -47,9 +47,10 @@
 	        }
 	        input.value="";
 	        input.placeholder="请输入10-100的整数";
-	    }
+	    }else{
 	    	alert("数组长度过长，请删除后再添加，谢谢！");
-	        return false;
+	    }
+	    return false;
       }
       function render(arr){
         var el=$("list");
