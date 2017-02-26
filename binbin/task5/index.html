@@ -70,11 +70,15 @@
           case "ladd":
             if(insert()){
               result.unshift(insert());
+            }else{
+            	isRender=false;
             }
             break;
           case "radd":
             if(insert()){
               result.push(insert());
+            }else{
+            	isRender=false;
             }
             break;
           case "ldel":
