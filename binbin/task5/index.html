@@ -16,6 +16,7 @@
           <button id="rdel">右侧出</button>
           <button id="sorted">排序显示</button>
           <button id="random">随机生成60个</button>
+          <button id="clear">数据清空</button>
         </div>
       </div>
       <div class="second">
@@ -95,6 +96,9 @@
           	for(var i=0;i<60;i++){
           		result.push(Math.ceil(Math.random()*100));
           	}
+          	break;
+          case "clear":
+          	result=[];
           	break;
           default:
             isRender=false;
