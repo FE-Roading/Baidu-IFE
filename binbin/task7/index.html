@@ -165,16 +165,16 @@
 		}
 		function zhongxu(tree){
 			if(tree){
-				qianxu(tree.lchild);
+				zhongxu(tree.lchild);
 				setTimeout(highlight(tree.data),i*500)
 				i=i+1;
-				qianxu(tree.rchild);	
+				zhongxu(tree.rchild);	
 			}
 		}
 		function houxu(tree){
 			if(tree){
-				qianxu(tree.lchild);
-				qianxu(tree.rchild);
+				houxu(tree.lchild);
+				houxu(tree.rchild);
 				setTimeout(highlight(tree.data),i*500)
 				i=i+1;
 			}
