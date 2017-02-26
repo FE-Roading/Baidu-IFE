@@ -103,13 +103,22 @@
           render(result);
         }
       }
-      var result=[]
-      for (var i = 0; i <60; i++) {
-      	result.push(i)
+      function init(){
+	      var el=$('random');
+	      if (document.createEvent) {
+	      	var obj = document.createEvent('HTMLEvents');
+	      	obj.initEvent('click',true,false);
+	      	el.dispatchEvent(obj);
+	      } else if (document.createEventObject) {
+	      	el.fireEvent('onclick');
+	      }
       }
+      var result=[];
       var input=$("input");
       add($("buttons"),"click",handler);
-      render(result);
+   
+   	  init();
+
     </script>
 </body>
 </html>
