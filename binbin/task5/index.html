@@ -35,18 +35,21 @@
         return document.getElementById(id);
       }
       function insert(){
-        var str=input.value;
-        if(str!=""){
-          if(parseInt(str)){
-          	var str=parseInt(str);
-          	if(str>=10 && str<=100){
-          		return parseInt(str);
-          	}
-          }
-        }
-        input.value="";
-        input.placeholder="请输入10-100的整数";
-        return false;
+        if(result.length<60){
+        	var str=input.value;
+	        if(str!=""){
+	          if(parseInt(str)){
+	          	var str=parseInt(str);
+	          	if(str>=10 && str<=100){
+	          		return parseInt(str);
+	          	}
+	          }
+	        }
+	        input.value="";
+	        input.placeholder="请输入10-100的整数";
+	    }
+	    	alert("数组长度过长，请删除后再添加，谢谢！");
+	        return false;
       }
       function render(arr){
         var el=$("list");
