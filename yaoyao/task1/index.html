@@ -114,8 +114,14 @@
                         if(temp<100)
                             result=true;                            
                 }
-                input.classList.value=result?cName+" iright":cName+" ierror";
-                tip.classList.value=result?cName+" tips "+" tright":cName+" tips "+" terror";
+                if(result){
+                    input.classList.value=cName+" iright";
+                    tip.classList.value=cName+" tips "+" tright";
+                    tip.innerHTML="格式正确";
+                }else{                    
+                    input.classList.value=cName+" ierror";
+                    tip.classList.value=cName+" tips "+" terror";
+                }
             })
         }
     </script>
