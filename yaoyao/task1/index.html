@@ -68,25 +68,25 @@
         <form action="#" method="GET">
             <div>
                 <label>名称：
-                    <b><input type="text" value="" class="name1"></b>
+                    <b><input type="text" value="" class="name1" placeholder="必填,长度为4-16个字符"></b>
                     <i><button class="name1">验证</button></i>
                 </label>
             </div>
-            <div class="tips name1">必填，长度为4-16个字符</div>
+            <div class="tips name1"></div>
             <div>
                 <label>名称：
-                    <b><input type="text" class="name2"></b>
+                    <b><input type="text" class="name2" placeholder="姓名不能为空"></b>
                     <i><button class="name2">验证</button></i>
                 </label>
             </div>
-            <div class="tips name2">姓名不能为空</div>
+            <div class="tips name2"></div>
             <div>
                 <label>名称：
-                    <b><input type="text" class="name3"></b>
+                    <b><input type="text" class="name3" placeholder="数值小于100"></b>
                     <i><button class="name3">验证</button></i>
                 </label>
             </div>
-            <div class="tips name3">数值小于100</div>
+            <div class="tips name3"></div>
         </form>
     </div>
     <script type="text/javascript">
@@ -121,6 +121,7 @@
                 }else{                    
                     input.classList.value=cName+" ierror";
                     tip.classList.value=cName+" tips "+" terror";
+                    tip.innerHTML="格式错误";
                 }
             })
         }
