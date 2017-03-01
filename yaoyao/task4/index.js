@@ -84,8 +84,9 @@ run.onclick=function(){
 		move(direct.value.trim());
 	}
 }
-run.onkeypress=function(){
-	if(direct.value!=""){
+direct.onkeypress=function(event){
+	var event=event|| window.event;
+	if(event.keyCode==13){
 		move(direct.value.trim());
 	}
 }
