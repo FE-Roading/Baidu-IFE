@@ -1,0 +1,50 @@
+input,button,select{
+	font:18px/1.5em "Arial","宋体","微软雅黑";
+}
+select{
+	margin:10px;
+}
+.role label:first-child{
+	margin-right: 40px;
+}
+#wkinfo{
+	margin: 5px auto;
+}
+.container{
+	width: 350px;
+	margin:100px auto;
+	background-color: #eee;
+	border:1px solid black;
+	padding:10px;
+}
+div{
+	text-align: center;
+}
+label{
+	font-weight: bold;
+}
+p{
+	margin: 5px;
+    text-indent: 5em;
+    color:grey;
+    font-weight: bold;
+}
+button{
+	margin-top: 5px;
+	width: 30%;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 5px;
+	color: #fff;
+	background-color: blue;
+}
+button:hover{
+	color:blue;
+	background-color: #fff;
+	cursor: pointer;
+input:focus{
+	outline: none;
+	border:2px solid grey;
+}
+
+
