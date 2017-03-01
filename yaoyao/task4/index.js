@@ -14,6 +14,7 @@ function move(direct){
 				result.innerHTML="指令执行成功";
 			}else{
 				result.innerHTML="出界了";
+				console.log("出界信息left top:",cursor.offsetLeft,cursor.offsetTop,curDirection)
 			}			
 			break;
 		case "TUN LEF":

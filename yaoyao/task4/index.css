@@ -40,7 +40,7 @@ html{
 .c2r2{
 	float: left;
 	width: 300px;
-	padding-left: 10px;
+	margin-left: 10px;
 	position: relative;
 }
 .c2r2 p{
