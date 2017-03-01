@@ -68,7 +68,7 @@ function go(dr) {
 			break;
 		case 4:
 			left=left-30;
-			if(left>=10){
+			if(left>=0){
 				cursor.style.left=left+"px";
 			}else{
 				return false;
