@@ -1,0 +1,78 @@
+html{
+	font:15px/2 "Arial","宋体","微软雅黑","serif";
+}
+.clearfix::after{
+	display: table;
+	content: " ";
+	clear:both;
+}
+.container{
+	width: 350px;
+	height: 650px;
+	border:1px solid black;
+	margin:100px auto;
+	padding:10px;
+}
+.column1{
+	padding-left: 30px;
+}
+.column1 i{
+	float: left;
+    box-sizing: border-box;
+    width: 30px;
+    text-align: center;
+    margin-bottom: -6px;
+    font-weight: bold;
+    font-style: normal;
+}
+.c2r1{
+	float: left;
+	width: 25px;
+}
+.c2r1 i{
+	float: left;
+	width: 25px;
+	height: 30px;
+	text-align: right;
+	font-weight: bold;
+	font-style: normal;
+}
+.c2r2{
+	float: left;
+	width: 300px;
+	margin-left: 10px;
+	position: relative;
+}
+.c2r2 p{
+	float:left;
+	box-sizing: border-box;
+	width: 30px;
+	height: 30px;
+	border:1px solid #eee;
+	margin:0;
+}
+#cursor{
+	position: absolute;
+	box-sizing: border-box;
+	width: 30px;
+	height: 30px;
+	border-top:5px solid blue;
+	background-color: red;
+}
+#direct{
+	width: 100px;
+	margin-right: 10px;
+}
+#tip{
+	color: red;
+	font-size: 12px;
+	font-weight: bold;
+}
+li{
+	font-size: 14px;
+	line-height: 1.2em;
+}
+li:first-child{
+	list-style: none;
+	text-indent: -2em;
+}
