@@ -79,6 +79,12 @@ function go(dr) {
 	}
 	return true;
 }
+(function init(){
+	var top=Math.floor(Math.random()*10)*30;
+	var left=Math.floor(Math.random()*10)*30;
+	cursor.style.left=left+"px";
+	cursor.style.top=top+"px";
+})()
 run.onclick=function(){
 	if(direct.value!=""){
 		move(direct.value.trim());
