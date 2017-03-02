@@ -1,0 +1,56 @@
+html{
+	font:15px/2 "Arial","宋体","微软雅黑","serif";
+}
+.clearfix::after{
+	display: table;
+	content: " ";
+	clear:both;
+}
+p,body{
+	margin:0;
+	padding: 0;
+}
+.container{
+	width: 800px;
+	margin:100px auto;
+	background-color: #eee;
+}
+.article{
+	text-indent: 2em;
+	border:1px solid #000;
+}
+#alertW{
+	width: 400px;
+	height: 400px;
+}
+.mask{
+	position: absolute;
+	background-color:blue;
+	opacity: 0.2;
+	top:0;
+	right: 0;
+	bottom:0;;
+	left: 0;
+}
+.alertW{
+	position: fixed;
+	left: 30%;
+	top:30%;
+	z-index: 10;
+	background-color: #fff;
+	border: 1px solid #000;
+}
+.title{
+	cursor: move;
+	text-align: center;
+	padding: 10px;
+	background-color: #ccc;
+	font-weight: bold;
+}
+.buttons{
+	text-align: right;
+	padding-right: 10px;
+}
+button{
+	margin: 10px;
+}
