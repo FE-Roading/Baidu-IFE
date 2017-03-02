@@ -19,10 +19,6 @@ p,body{
 	text-indent: 2em;
 	border:1px solid #000;
 }
-#alertW{
-	width: 400px;
-	height: 400px;
-}
 .mask{
 	position: absolute;
 	background-color:blue;
@@ -34,8 +30,6 @@ p,body{
 }
 .alertW{
 	position: fixed;
-	left: 30%;
-	top:30%;
 	z-index: 10;
 	background-color: #fff;
 	border: 1px solid #000;
@@ -53,4 +47,7 @@ p,body{
 }
 button{
 	margin: 10px;
+}
+#alertW{
+	min-width: 350px;
 }
