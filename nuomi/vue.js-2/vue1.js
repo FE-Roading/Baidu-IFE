@@ -9,9 +9,11 @@ Events.prototype.on=function(key,func){
 	this.eventLists[key].push(func);
 }
 Events.prototype.emit=function(key,func){
-    var args = Array.prototype.slice.call(arguments,1);
-    for(var i = 0; i < this.eventLists[key].length; i++) {
-          this.eventLists[key][i].apply(this,args);
+    if(key in this.eventLists){
+    	var args = Array.prototype.slice.call(arguments,1);
+	    for(var i = 0; i < this.eventLists[key].length; i++) {
+	          this.eventLists[key][i].apply(this,args);
+	    }
     }
 }
 
