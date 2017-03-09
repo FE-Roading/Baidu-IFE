@@ -24,7 +24,7 @@ function mobVerify(){
 	}
 }
 function strVerify(){
-	var strReg=/\b([a-z]+)\b\s\b\1\b/g;
+	var strReg=/\b([a-zA-Z]+)\s\1\b/g;
 	var strText=str.value.trim();
 	if(strText.search(strReg)!=-1){
 		strinfo.innerHTML="yes,有相邻重复单词";
