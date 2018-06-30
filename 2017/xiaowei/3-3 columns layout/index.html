@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./main.css" type="text/css">
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	<title>HTML basis</title>
+</head>
+<body>
+	<div class="wrap">	
+		<h1 class="blog-url"><a href="https://roading.github.io/">个人博客</a></h1>
+		<table class="task-info">
+			<tr>
+				<td>
+					任务名称：<a href="http://ife.baidu.com/course/detail/id/94" target="_blank">任务三：三栏式布局</td>
+				<td>
+					导师：<a href="http://ife.baidu.com/mentor/detail/id/27" target="_blank">小薇导师</a>
+				</td>
+				<td>
+					学院：<a href="http://ife.baidu.com/college/detail/id/9" target="_blank">小薇学院</a>
+				</td>
+			</tr>
+		</table>
+		<p class="ptitle">法一:浮动方法</p>
+		<div class="container clearfix method1">
+			<div class="left fl">
+				<div>
+					<img width="80" height="80" src="./bg.jpg" alt="团队介绍">
+					<span>团队介绍</span>
+				</div>
+				<div>
+					<img width="80" height="80" src="./bg.jpg" alt="团队介绍">
+					<span>团队介绍</span>
+				</div>
+			</div>
+			<div class="right fr">
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+			</div>
+			<div class="center">
+				<p>团队 介绍</p>
+				<p>来注意的深刻的甲方现场v就立刻撒旦了疯狂就下次考虑下</p>
+				<p>金算盘网聚集营销领域的精英，负责市场营销方面的同学，在大学期间是就读于市场营销的专业，熟悉掌握营销各个方面的知识，有丰富的市场调研经验和方法，成功为茶叶店做过营销策划案，有成功的市场策划的经验.。对网络品牌创建和网络营销传播有着独特的见解和观点，并拥有丰富的经验。充分发挥互联网传播特点，以网民喜闻乐见的形式，能够根据客户需要提供针对性方案。打造网络营销服务、网络信息传播、网络公关与网络广告投放等等手段打出一套组合拳，创造出适合大学生市场的网络营销传播模式，为大学生量身定制网络营销战略方案。.对大学生理财有深入的调研和了解，对大学生这一理财市场有着很大的信心,有着富有创意的营销策划案，相信金算盘理财网在我们团队努力下定能够成功经营起来。
+				</p>
+				<p>民喜闻乐见的形式，能够根据客户需要提供针对性方案。打造网络营销服务、网络信息传播、网络公关与网络</p>
+			</div>
+		</div>
+		<p class="ptitle">法二:绝对定位</p>
+		<div class="container method2">
+			<div class="left pl">
+				<div>
+					<img width="80" height="80" src="./bg.jpg" alt="团队介绍">
+					<span>团队介绍</span>
+				</div>
+				<div>
+					<img width="80" height="80" src="./bg.jpg" alt="团队介绍">
+					<span>团队介绍</span>
+				</div>
+			</div>
+			<div class="right pr">
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+			</div>
+			<div class="center">
+				<p>团队 介绍</p>
+				<p>来注意的深刻的甲方现场v就立刻撒旦了疯狂就下次考虑下</p>
+				<p>金算盘网聚集营销领域的精英，负责市场营销方面的同学，在大学期间是就读于市场营销的专业，熟悉掌握营销各个方面的知识，有丰富的市场调研经验和方法，成功为茶叶店做过营销策划案，有成功的市场策划的经验.。对网络品牌创建和网络营销传播有着独特的见解和观点，并拥有丰富的经验。充分发挥互联网传播特点，以网民喜闻乐见的形式，能够根据客户需要提供针对性方案。打造网络营销服务、网络信息传播、网络公关与网络广告投放等等手段打出一套组合拳，创造出适合大学生市场的网络营销传播模式，为大学生量身定制网络营销战略方案。.对大学生理财有深入的调研和了解，对大学生这一理财市场有着很大的信心,有着富有创意的营销策划案，相信金算盘理财网在我们团队努力下定能够成功经营起来。
+				</p>
+				<p>民喜闻乐见的形式，能够根据客户需要提供针对性方案。打造网络营销服务、网络信息传播、网络公关与网络</p>
+			</div>
+		</div>
+		<p class="ptitle">法三:负margin</p>
+		<div class="container method3 clearfix">
+			<div class="main">
+				<div class=" center">
+					<p>团队 介绍</p>
+					<p>来注意的深刻的甲方现场v就立刻撒旦了疯狂就下次考虑下</p>
+					<p>金算盘网聚集营销领域的精英，负责市场营销方面的同学，在大学期间是就读于市场营销的专业，熟悉掌握营销各个方面的知识，有丰富的市场调研经验和方法，成功为茶叶店做过营销策划案，有成功的市场策划的经验.。对网络品牌创建和网络营销传播有着独特的见解和观点，并拥有丰富的经验。充分发挥互联网传播特点，以网民喜闻乐见的形式，能够根据客户需要提供针对性方案。打造网络营销服务、网络信息传播、网络公关与网络广告投放等等手段打出一套组合拳，创造出适合大学生市场的网络营销传播模式，为大学生量身定制网络营销战略方案。.对大学生理财有深入的调研和了解，对大学生这一理财市场有着很大的信心,有着富有创意的营销策划案，相信金算盘理财网在我们团队努力下定能够成功经营起来。
+					</p>
+					<p>民喜闻乐见的形式，能够根据客户需要提供针对性方案。打造网络营销服务、网络信息传播、网络公关与网络</p>
+				</div>
+			</div>
+			<div class="left ml">
+				<div>
+					<img width="80" height="80" src="./bg.jpg" alt="团队介绍">
+					<span>团队介绍</span>
+				</div>
+				<div>
+					<img width="80" height="80" src="./bg.jpg" alt="团队介绍">
+					<span>团队介绍</span>
+				</div>
+			</div>
+			<div class="right mr">
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+				<div><img width="80" height="80" src="./bg.jpg" alt="团队介绍"></div>
+			</div>
+		</div>
+
+	</div>
+	<div class="footer">版权所有&reg;</div>
+</body>
+</html>

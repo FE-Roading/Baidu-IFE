@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./index.css">
+</head>
+<body class="root">
+	<div class="buttons">
+		<button id="qian">前序遍历</button>
+		<button id="zhong">中序遍历</button>
+		<button id="hou">后序遍历</button>
+	</div>
+	<div class="wrap" style="width: 900px;height: 900px;" id="root">
+	</div>
+	<script type="text/javascript">
+		var main=document.getElementById("root");
+		var tree={
+			data:"s11",
+			lchild:{
+				data:"s21",
+				lchild:{
+					data:"s31",
+					lchild:{
+						data:"s41",
+						lchild:{
+							data:"s51"
+						},
+						rchild:{
+							data:"s52"
+						}
+					},
+					rchild:{
+						data:"s42",
+						lchild:{
+							data:"s53"
+						},
+						rchild:{
+							data:"s54"
+						}
+					}
+				},
+				rchild:{
+					data:"s32",
+					lchild:{
+						data:"s43",
+						lchild:{
+							data:"s55"
+						},
+						rchild:{
+							data:"s56"
+						}
+					},
+					rchild:{
+						data:"s44",
+						lchild:{
+							data:"s57"
+						},
+						rchild:{
+							data:"s58"
+						}
+					}
+				}
+			},
+			rchild:{
+				data:"s22",
+				lchild:{
+					data:"s33",
+					lchild:{
+						data:"s45",
+						lchild:{
+							data:"s59"
+						},
+						rchild:{
+							data:"s510"
+						}
+					},
+					rchild:{
+						data:"s46",
+						lchild:{
+							data:511
+						},
+						rchild:{
+							data:"s512"
+						}
+					}
+				},
+				rchild:{
+					data:"s34",
+					lchild:{
+						data:"s47",
+						lchild:{
+							data:"s513"
+						},
+						rchild:{
+							data:"s514"
+						}
+					},
+					rchild:{
+						data:"s48",
+						lchild:{
+							data:"s515"
+						},
+						rchild:{
+							data:"s516"
+						}
+					}
+				}
+			}
+		}
+		function render(fid,id){
+			var fel=document.getElementById(fid);
+			var temp=document.createElement("div");
+			temp.id=id;
+			temp.innerHTML=id;
+			var h=fel.style.height;
+			h=parseInt(h.substring(0,h.length-2));
+			var w=fel.style.width;
+			w=parseInt(w.substring(0,w.length-2));
+			if(id!="s11"){
+				if(h>w){
+					w=w-40;
+					h=h/2-40;
+				}else{
+					h=h-40;
+					w=w/2-40;			
+				}
+			}
+			if(h>w){
+				temp.style.flexDirection="column";
+			}else{
+				temp.style.flexDirection="row";
+			}
+			temp.style.width=w+"px";
+			temp.style.height=h+"px";
+		
+			fel.appendChild(temp);	
+		}
+		function bianli(tree,id) {
+			if(tree){
+				render(id,tree.data)		
+				bianli(tree.lchild,tree.data);
+				bianli(tree.rchild,tree.data);
+			}
+		}
+		bianli(tree,"root");//内容生成
+
+		function highlight(id){
+			return function(){
+				var el=document.getElementById(id);
+				var divs=document.querySelectorAll(".wrap div");
+				divs.forEach(function(item){
+					item.style.backgroundColor="white";
+				})
+				el.style.backgroundColor="yellow";
+			}
+		}
+		function qianxu(tree){
+			if(tree){				
+				setTimeout(highlight(tree.data),i*500)
+				i=i+1;
+				qianxu(tree.lchild);
+				qianxu(tree.rchild);
+			}
+		}
+		function zhongxu(tree){
+			if(tree){
+				zhongxu(tree.lchild);
+				setTimeout(highlight(tree.data),i*500)
+				i=i+1;
+				zhongxu(tree.rchild);	
+			}
+		}
+		function houxu(tree){
+			if(tree){
+				houxu(tree.lchild);
+				houxu(tree.rchild);
+				setTimeout(highlight(tree.data),i*500)
+				i=i+1;
+			}
+		}
+		function dbutton(){
+			qian.disabled=true;
+			zhong.disabled=true;
+			hou.disabled=true;
+			setTimeout(function(){
+				qian.disabled=false;
+				zhong.disabled=false;
+				hou.disabled=false;
+			},15000)
+		}
+		var i=0;//用于定时其
+		var qian=document.getElementById("qian");
+		var zhong=document.getElementById("zhong");
+		var hou=document.getElementById("hou");
+		qian.onclick=function(){
+			i=0;
+			qianxu(tree);
+			dbutton()
+		};
+		zhong.onclick=function(){
+			i=0;
+			zhongxu(tree);
+			dbutton()
+		};
+		hou.onclick=function(event){
+			i=0;
+			houxu(tree);
+			dbutton()
+		}
+	</script>
+</body>
+</html>

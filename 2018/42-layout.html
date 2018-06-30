@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第七天到第八天：学习布局</title>
+</head>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+        font-family:"Microsoft Yahei",Arial,Simsun,Sans-serif;
+    }
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+    .fl{
+        float: left;
+    }
+    .fr{
+        float: right;
+    }
+    .clearfix::after{
+        content: "";
+        display:block;
+        clear: both;
+    }
+
+    .container{
+        width: 960px;
+        margin: 0 auto;
+    }
+    .header{
+        color: #fff;
+        background-color:#282828;
+        height: 74px;
+    }
+    .logo{
+        font-size: 26px;
+        line-height: 74px;
+        vertical-align: middle;
+    }
+    .header ul{
+        padding-top: 5px;
+    }
+    .header li{
+        float: left;
+        margin:0 7px; 
+        border-bottom: 1px solid #fff;        
+    }
+
+    .banner{
+        height: 300px;
+        background-color: #66bb33;        
+    }
+    .banner .container{
+        position: relative;
+    }
+    .banner .indicators{
+        position: absolute;
+        right: 0;
+        bottom: -290px;
+    }
+    .banner .indicators li{
+        float: left;
+        margin-right: 5px;        
+        padding: 11px;
+        border: 1px solid #335e1a;
+        background-color: #b2dd99;
+        margin-top: 15px;
+    }
+    .banner .indicators li:last-child{
+        margin-right: 0;
+    }
+    .banner .indicators li:hover,.banner .indicators li.active{
+        background-color: #e0f1d6;
+        margin-top: 0px;
+        padding-top: 26px;
+        transition: all .3s linear;
+        cursor: pointer;
+    }
+
+    .maincontent{
+        margin-top: 70px;        
+        border-top: 1px solid #dddddd;
+        width: 100%;
+        height: 580px;
+    }
+    .maincontent .container{
+        position: relative;
+    }
+    .maincontent .bars{
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+    }
+    .maincontent .bars li{
+        float: left;
+        padding: 20px 30px 17px 30px;
+        background-color: #eee;
+        border: 1px solid #dfdfdf;
+        border-radius: 20px 20px 0 0;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .maincontent .bars li:hover, .maincontent .bars li.active{
+        background-color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+    .maincontent .contents>div{
+        position: absolute;
+        display: none;
+        width: 100%;
+    }
+    .maincontent .contents .active{
+        display: block;
+    }
+    .maincontent .con-col1 .flex-container{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content:space-between;
+        align-content:space-around;
+        width: 100%;
+        height: 578px;
+    }
+    
+    .maincontent .con-col1 .flex-container .content{
+        box-sizing: border-box;
+        border:1px solid #ccc;
+        width: 310px;
+        height: 176px; 
+        display: flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .maincontent .con-col1 .flex-container .unique{
+        width: 230px;
+        height: 176px;
+    }
+
+    .footer{
+        background-color: #666;
+        height: 120px;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .footer i{
+        font-style: normal;
+        color: #fff;
+    }
+
+
+</style>
+<body>    
+    <div class="header">
+        <div class="container clearfix">
+            <div class="logo fl">Logo</div>
+            <ul class="fr">
+                <li><a href="#">Github</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>       
+    </div>
+
+    <div class="banner">
+        <div class="container clearfix">
+            <ul class="indicators">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+    <div class="maincontent">
+        <div class="container">
+            <ul class="bars">
+                <li id="col1" class="active">HOME</li>
+                <li id="col2">PROFILE</li>
+                <li id="col3">ABOUT</li>
+            </ul>
+            <div class="contents">
+                <div class="con-col1 active">   
+                    <div class="flex-container">
+                        <div class="content"><div>Content1</div></div>
+                        <div class="content"><div>Content2</div></div>
+                        <div class="content"><div>Content3</div></div>
+                        <div class="content unique"><div>Content4</div></div>
+                        <div class="content unique"><div>Content5</div></div>
+                        <div class="content unique"><div>Content6</div></div>
+                        <div class="content unique"><div>Content7</div></div>
+                        <div class="content"><div>Content8</div></div>
+                        <div class="content"><div>Content9</div></div>
+                        <div class="content"><div>Content1</div>0</div>
+                    </div>
+                </div>
+                <div class="con-col2">Profile column</div>
+                <div class="con-col3">About column</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <i>@2018 ife.baidu.com</i>
+        </div>
+    </div>
+    <script>
+        var contentBar=document.getElementsByClassName("bars")[0]
+        var contentBars=document.getElementsByClassName("bars")[0].children
+        var contentItem=document.getElementsByClassName("contents")[0]
+        var contentItems=document.getElementsByClassName("contents")[0].children
+        contentBar.onclick=function(e){
+            console.log(e.target.id)
+            cancelState(contentBars,"active")
+            e.target.className+=" active"
+            cancelState(contentItems,"active")
+            contentItem.getElementsByClassName("con-"+e.target.id)[0].className+=" active"
+        }
+        function cancelState(eles,stateString){
+            for(var i=0;i<eles.length;i++){
+                eles[i].className=eles[i].className.replace(stateString,"")
+            }
+        }
+    </script>
+</body>
+</html>

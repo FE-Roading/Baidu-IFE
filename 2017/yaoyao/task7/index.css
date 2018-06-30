@@ -1,0 +1,48 @@
+.container{
+	width: 600px;
+	margin:100px auto;
+	background-color: #eee;
+	border:1px solid blue;
+}
+table{
+	border-collapse: collapse;
+	margin: 0 auto;
+	border:1px solid #fff;
+}
+th{
+	background-color:#5B5B5B;
+	color:#fff;
+	position: relative;
+	width: 100px;
+	height: 40px;
+}
+.buttons{
+	position: absolute;
+	right:0;
+	top: 0;
+	height: 40px;
+	width: 30px;
+}
+p{
+	width: 0;
+	height: 0;
+	margin:0;
+	border-right: 5px solid transparent; 
+	border-left: 5px solid transparent; 
+	position: absolute;
+	right: 10px;
+	cursor: pointer;
+}
+.buttons .up{
+	border-top: 5px solid transparent; 
+	border-bottom: 5px solid #fff; 
+	top:5px;
+}
+.buttons .down{
+	border-top: 5px solid #fff; 
+	border-bottom: 5px solid transparent; 
+	bottom: 5px;
+}
+td{
+	text-align: center;
+}
