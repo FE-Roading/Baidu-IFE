@@ -1,0 +1,627 @@
+﻿@font-face {
+	font-family: 'ProximaNova';
+	src: url('fonts/ProximaNova-Regular.eot');
+	src: local('☺')url('../fonts/ProximaNova-Regular.woff') format('woff'), url('fonts/ProximaNova-Regular.ttf') format('truetype'), url('fonts/ProximaNova-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ProximaNova';
+	src: url('fonts/ProximaNova-Bold.eot');
+	src: local('☺'), url('../fonts/ProximaNova-Bold.woff') format('woff'), url('fonts/ProximaNova-Bold.ttf') format('truetype'), url('fonts/ProximaNova-Bold.svg') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+body {
+    font: normal 14px/19px "ProximaNova", Arial, Verdana, "\5b8b\4f53";
+    color: #666;
+    background: #fff
+}
+i{
+    display: inline-block;
+}
+
+.menu{
+    height: 100%;
+    float: left;
+}
+/* 一级菜单 */
+.menu .primary{
+    height: 100%;
+    width: 100px;
+    background-color: #1d2531;
+    text-align: center;
+    float: left;
+    position: relative;
+
+}
+.menu .primary li{
+    padding-top: 20px;
+}
+.menu .primary .icons{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -24px;
+}
+.menu .primary .icons i{
+    margin-right: 16px;
+    cursor: pointer;
+}
+.menu .primary .icons i:last-child{
+    margin-right: 0;
+}
+
+/* 二级菜单 */
+.menu .secondry{
+    padding:7px 30px 30px 30px;
+    width: 250px;
+    height: 100%;
+    float: left;
+    background-color: #222c3c;
+    box-sizing: border-box;
+    font-weight:bold;
+    position: relative;
+    font-size: 14px;
+}
+.menu .secondry dl{
+    border-bottom: 1px solid #2a3547;
+    padding-top: 27px;
+}
+.menu .secondry dl:last-child{
+    border-bottom: none;
+}
+.menu .secondry dt{
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 30px;
+    color: #5b6779;
+}
+.menu .secondry dd a,.menu .secondry dd{    
+	line-height: 14px;
+	margin-bottom: 24px;
+	color: #b7c0cd;
+}
+.menu .secondry dd:last-child{
+    margin-bottom 28px;
+}
+
+.menu .secondry dl p{
+    float: left;
+}
+.menu .secondry dl i{
+    float: right;
+}
+.menu .secondry .products dd p{
+    float: none;
+    display: inline-block;
+}
+.menu .secondry .products dd i{
+    float: left;
+    margin-right: 13px;
+}
+
+.menu .secondry .status{
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    left: 30px;
+    color: #fff;      
+}
+.menu .secondry .status .text{
+    margin-bottom: 12px;
+}
+.menu .secondry .title{
+    float: left;
+}
+.menu .secondry  .num{
+    float: right;
+}
+.menu .secondry .status .prog,.menu .secondry .status .prog .prog-mask{
+    height: 4px;
+    border-radius: 2px;
+}
+.menu .secondry .status .prog{
+    width: 100%;
+    position: relative;
+    background: #2d3848;
+}
+.menu .secondry .status .prog .prog-mask{
+    position: absolute;
+    left: 0;
+    background-color: #9581e3;
+    width: 30%;
+}
+.chat{
+    margin-left: 350px;
+    height: 100%;
+}
+.chat .head{
+    box-sizing: border-box;
+    height: 80px;
+    padding: 17px 30px;
+    border-bottom: 1px solid #e6e9ec;
+}
+.chat .head .title{
+    font-size: 24px;
+    line-height: 46px;
+    color: #354052;
+    float: left;
+}
+.chat .head .profile{
+    float: right;
+    cursor: pointer;
+}
+.chat .head .profile .avator{
+    position: relative;
+}
+.chat .head .profile>div{
+    float: left;
+}
+.chat .head .profile img{
+    width: 46px;
+    height: 46px;
+    border-radius: 23px
+}
+.chat .head .profile .avator i{
+    position: absolute;
+    bottom: 0;
+    left: 32px;
+}
+.chat .head .profile .desc{
+    padding-left: 20px;
+    padding-right: 30px;
+}
+.chat .head .profile .desc .role{
+    font-size: 14px;
+    font-weight: bold;
+    color: #b5b5b5;
+} 
+.chat .head .profile .arrow-dropdown{
+    margin-top: 15px;
+}
+.chat .func-row{
+    height: 70px;
+    border-bottom: 1px solid #e6e9ec;
+}
+.chat .func-row .contact-search{
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    width: 400px;      
+    padding:16px 30px;
+    position: relative;      
+    border-right: 1px solid #e6e9ec;
+}
+.chat .func-row .contact-search input{  
+    width: 340px;
+    height: 36px;
+    border: 1px solid #e6e9ec;
+    border-radius: 2px;
+    text-indent: 1em;
+    font-size: 14px;
+    color: #585d68;
+}
+.chat .func-row .icon-search{
+    position: absolute;
+    right: 39px;
+    top: 29px;
+}
+.chat .func-row .msg-op{
+    box-sizing: border-box;
+    height: 70px;
+    padding-left: 430px;
+    padding-right: 20px;
+}
+.chat .func-row .msg-op .cur-user{
+    float: left;
+}
+.chat .func-row .msg-op ul, .chat .func-row .page-i{
+    float: right;
+}
+.chat .func-row .msg-op .cur-user{
+    position: relative;
+}
+.chat .func-row .msg-op .cur-name{
+    font-size: 18px;
+    color: #585d68;
+    line-height: 70px;
+    font-weight: bold;
+    padding-right: 
+}
+.chat .func-row .msg-op .icon-cur{
+    position: absolute;
+    right: -20px;
+    top: 29px;
+}
+.chat .func-row .msg-op li{
+    float: left;
+    cursor: pointer;
+}
+.chat .func-row .msg-op .op{
+    /* margin-left: 490px; */
+    margin-top: 18px;
+}
+.chat .func-row .msg-op .op li{
+    box-sizing: border-box;
+    height: 32px;
+    width: 36px;
+    line-height: 32px;
+    text-align: center;
+    border: 1px solid #ced0da;
+}
+.chat .func-row .msg-op li:first-child{
+    border-radius: 5px 0 0 5px;
+}
+.chat .func-row .msg-op li:last-child{
+    border-radius: 0 5px 5px 0;
+}
+.chat .func-row .msg-op .page-i{
+    margin-left: 5%;
+    line-height: 70px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #56688a;
+}
+.chat .func-row .msg-op .page-op{
+    margin-right: 6%;
+    margin-top: 17px;
+    margin-left: 5%;
+
+}
+.chat .func-row .msg-op .page-op li{
+    box-sizing: border-box;
+    height: 32px;
+    width: 36px;
+    line-height: 32px;
+    text-align: center;
+    border: 1px solid #ced0da;
+}
+
+.chat .content{
+    position: absolute;
+    bottom: 0;
+    top: 150px;
+    left: 350px;
+    right: 0;
+}
+.chat .contact-list{
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+.chat .contact-list li{
+    box-sizing: border-box;
+    padding: 15px 30px;
+    border-bottom: 1px solid #e6e9ec;
+    border-right: 1px solid #e6e9ec;
+}
+
+/*-------------当前正在沟通的联系人*/
+.chat .contact-list li.active{
+    border-left: 5px solid #2399f1;
+}
+.chat .contact-list li.active .profile .name{
+    color: #2399f1;
+    font-weight: bold;
+}
+/*-------------当前正在沟通的联系人*/
+
+.chat .contact-list .profile .avator{
+    position: relative;
+}
+.chat .contact-list .profile>div{
+    float: left;
+}
+.chat .contact-list .profile img{
+    width: 46px;
+    height: 46px;
+    border-radius: 23px
+}
+
+.chat .contact-list .profile .desc{
+    padding-left: 20px;
+    padding-right: 30px;
+}
+.chat .contact-list .profile .desc .role{
+    font-size: 14px;
+    font-weight: bold;
+    color: #b5b5b5;
+} 
+.chat .contact-list .profile .com-date{
+    float: right;
+    color: #7f8fa4;
+    font-size: 14px;
+    font-weight: bold;
+}
+.chat .contact-list .detail{
+    padding-top: 14px;
+    position: relative;
+}
+.chat .contact-list .detail .text{
+    height: 3em;
+    overflow: hidden;
+    padding-right: 2em;
+}
+.chat .contact-list .detail .icon-notify{
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.chat .message{
+    padding-top: 30px;
+    position: absolute;
+    top: 0;
+    left: 400px;
+    bottom: 0;
+    right: 0;
+}
+.chat .message ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+}
+.chat .message li{
+    position: relative;
+    padding:10px 50px 20px 96px;
+}
+.chat .message li .avator{
+    width: 46px;
+    right: 46px;
+    border-radius: 23px;
+    position: absolute;
+    top: 6px;
+    left: 35px;
+}
+.chat .message li .title{
+    padding-bottom: 10px;
+}
+.chat .message li .usr-name{
+    font-weight: bold;
+    font-size: 16px;
+    color: #585d68;
+    padding-right: 10px;
+}
+.chat .message li .msg-time{
+    font-size: 14px;
+	color: #7f8fa4;
+}
+.chat .message .space-line{
+    height: 0;
+    padding: 0;
+    margin-bottom: 20px;      
+    text-align: center;  
+    border-bottom: 1px solid #d9dde3;
+    position: relative;
+}
+.chat .message .space-line span{
+    position: absolute;
+    top: -7px;
+    font-size: 14px;
+	line-height: 14px;
+    color: #7f8fa4;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #fff;
+    
+}
+.chat .message .msg-content .msg-img{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;  
+}
+.chat .message .msg-content .imgs{
+    display: inline-block;
+    position: relative;
+    border-radius: 5px;
+}
+.chat .message .msg-content .imgs:hover .mask,.chat .message .msg-content .imgs:hover i{
+    display: block;
+}
+.chat .message .msg-content img{
+    height: 100px;
+    width: 156px;
+}
+.chat .message .msg-content .mask{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #323844;
+    opacity: 0.7;
+    display: none;
+}
+.chat .message .msg-content i{
+    position: absolute;
+    left: 35%;
+    top: 25%;
+    display: none;
+    cursor: pointer;
+}
+
+.chat .msg-input{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0px;
+    padding-bottom: 20px;
+    background-color: #fff;
+    margin-right: 30px;
+    overflow: hidden;
+}
+.chat .msg-input span{
+    display: inline-block;
+    height: 54px;
+    width: 54px;
+    text-align: center;
+    line-height: 54px;
+    border: 1px solid #ced0da;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+.chat .msg-input input{
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    padding-left: 60px;
+    width: 100%;
+    height: 56px;    
+    font-size: 14px;
+    line-height: 19px;
+    text-indent: 2em;
+    color: #585d68;
+    border: 1px solid #ced0da;
+    
+}
+
+
+
+.icon-cur{
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+    background-color:#1bb934; 
+}
+.icon-setting{
+    height:16px;
+    width:16px;
+    background:url(../images/img.png) 0 -188px;
+}
+.icon-grid{
+    height:16px;
+    width:16px;
+    background:url(../images/img.png) -12px -349px;
+}
+.icon-books{
+    height:16px;
+    width:18px;
+    margin-top: -2px;
+    background:url(../images/img.png) -51px -83px no-repeat;
+}
+.icon-tortorials{
+    height:16px;
+    width:18px;
+    margin-top: -2px;
+    background:url(../images/img.png) -2px -134px no-repeat;
+}
+.icon-stocks{
+    height:16px;
+    width:18px;
+    margin-top: -2px;
+    background:url(../images/img.png) -54px -191px no-repeat;
+}
+.icon-infographics{
+    height:16px;
+    width:18px;
+    margin-top: -2px;
+    background:url(../images/img.png) -10px -294px no-repeat;
+}
+.icon-warning{
+    height:24px;
+    width:24px;
+    /* margin-top: -2px; */
+    background:url(../images/img.png) -63px -345px no-repeat;
+}
+.icon-notify{
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 24px;
+    height: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 12px;
+    background-color: #2298f1;
+    color: #fff;
+}
+.login-status{    
+   height:14px;
+   width:14px;
+   background:url(../images/img.png) -6px -85px no-repeat;
+}
+.arrow-dropdown{
+    height:7px;
+    width:11px;
+    background:url(../images/img.png) -5px -40px no-repeat;
+}
+.icon-search{
+    height:16px;
+    width:16px;
+    background:url(../images/img.png) -8px -246px no-repeat;
+}
+.icon-msg-del{
+    height:16px;
+    width:16px;
+    background:url(../images/img.png) -60px -294px no-repeat;
+}
+.icon-plus{
+    height:14px;
+    width:14px;
+    background:url(../images/img.png) -52px -36px no-repeat;
+}
+.icon-msger-add{
+    height: 16px;
+    width: 16px;
+    background: url(../images/img.png) -54px -135px no-repeat;
+}
+.icon-msg-upload{
+    height:15px;
+    width:16px;
+    background:url(../images/img.png) -58px -245px no-repeat;
+}
+.icon-page-next{
+    height:10px;
+    width:6px;
+    background:url(../images/img.png) -57px 0 no-repeat;
+}
+.icon-page-previous{
+    height:10px;
+    width:6px;
+    background:url(../images/img.png) -6px 0 no-repeat;
+}
+.icon-zoom{
+    height:50px;
+    width:50px;
+    background:url(../images/zoom.png) 0 0 no-repeat;
+}
+
+
+
+
+
+
+
+
+
+::-webkit-placeholder{
+    color: rgba(159, 169, 187, 0.8);
+
+}
+::-ms-placeholder{
+    color: rgba(159, 169, 187, 0.8);
+}
+
+
+
+::-webkit-scrollbar{
+    display: none;
+}
+::-moz-scrollbar{
+    display: none;
+}
+::-ms-scrollbar{
+    display: none;
+}
+
+
+
+

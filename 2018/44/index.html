@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第十二天到第十五天，复杂页面实现</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="menu clearfix">
+        <div class="primary clearfix">
+            <ul>
+                <li><a href="javascript:;"><img src="./images/item-1.png" alt=""></a> </li>
+                <li><a href="javascript:;"><img src="./images/item-2.png" alt=""></a> </li>
+                <li><a href="javascript:;"><img src="./images/item-3.png" alt=""></a> </li>
+                <li><a href="javascript:;"><img src="./images/item-add.png" alt=""></a> </li>
+            </ul>
+            <div class="icons">
+                <i class="icon-grid"></i>
+                <i class="icon-setting"></i>
+            </div>
+        </div>
+        <div class="secondry">
+            <dl>
+                <dt>
+                    <p>Menu</p>
+                    <i class="icon-setting"></i>
+                </dt>
+                <dd>
+                    <a href="javascript:;">Overview</a><i></i>
+                </dd>
+                <dd>
+                        <a href="javascript:;">Sales</a><i class="icon-notify">25</i>
+                </dd>
+                <dd>
+                        <a href="javascript:;">Your Staff</a><i></i>
+                </dd>
+                <dd>
+                        <a href="javascript:;">Analytics & Targeting</a><i></i>
+                </dd>
+                <dd>
+                        <a href="javascript:;">What’s New</a><i></i>
+                </dd>
+            </dl>
+            <dl class="products">
+                <dt>
+                    <p>YOUR PRODUCTS</p>
+                    <i class="icon-setting"></i>
+                </dt>
+                <dd>
+                    <a href="javascript:;">Book</a><i class="icon-books"></i> 
+                </dd>
+                <dd>
+                    <a href="javascript:;">Tutorials</a><i class="icon-tortorials"></i>
+                </dd>
+                <dd>
+                    <a href="javascript:;">Infographics</a><i class="icon-stocks"></i>
+                </dd>
+                <dd>
+                    <a href="javascript:;">Stocks</a><i class="icon-infographics"></i>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <p>DASHBOARD</p>
+                    <i class="icon-setting"></i>
+                </dt>
+                <dd>
+                    <a href="javascript:;">Messages</a><i></i> 
+                </dd>
+                <dd>
+                    <a href="javascript:;">Connections</a><i></i>
+                </dd>
+                <dd>
+                    <a href="javascript:;">Integrations</a><i class="icon-warning"></i>
+                </dd>
+                <dd>
+                    <a href="javascript:;">Account Settings</a><i></i>
+                </dd>
+                <dd>
+                    <a href="javascript:;">App Settings</a><i></i>
+                </dd>
+            </dl>
+            <div class="status">
+                <div class="text clearfix">
+                    <p class="title">Monthly Goals</p>
+                    <p class="num">
+                        <span class="goal">$580</span>/<span>$3200</span>
+                    </p>    
+                </div>                
+                <div class="prog">
+                    <s class="prog-mask"></s>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <div class="chat">
+        <div class="head clearfix">
+            <div class="title">Message</div>
+            <div class="profile">
+                <div class="avator">
+                    <img src="./images/Face1.png" alt="用户名">
+                    <i class="login-status"></i>
+                </div>
+                <div class="desc">
+                     <div class="name">Coman.Kaaka</div>
+                    <div class="role">Administrator</div>
+                </div>
+                <i class="arrow-dropdown"></i>
+            </div>
+        </div>
+        <div class="func-row clearfix">
+            <div class="contact-search">
+                <input type="text" placeholder="Search">
+                <button class="icon-search"></button>
+            </div>
+            <div class="msg-op">
+                <div class="cur-user">
+                    <div class="cur-name">Bessie Berry</div>
+                    <i class="icon-cur"></i>
+                </div>     
+                <ul class="page-op clearfix">
+                        <li><i class="icon-page-previous"></i></li>
+                        <li><i class="icon-page-next"></i></li>
+                </ul>    
+                <div class="page-i">1 of 28</div>       
+                <ul class="op clearfix">
+                    <li><i class="icon-msger-add"></i></li>
+                    <li><i class="icon-msg-upload"></i></li>
+                    <li><i class="icon-msg-del"></i></li>
+                </ul>
+                
+                
+            </div>
+        </div>
+        <div class="content clearfix">            
+            <div class="contact-list">
+                <ul>
+                    <li class="active">
+                        <div class="profile clearfix">
+                            <div class="avator">
+                                <img src="./images/Face1.png" alt="用户名">
+                            </div>
+                            <div class="desc">
+                                    <div class="name">Coman.Kaaka</div>
+                                <div class="role">Administrator</div>
+                            </div>
+                            <i class="com-date">5Min</i>
+                        </div>
+                        <div class="detail">
+                            <p class="text">
+                                    Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                            </p>
+                            <i class="icon-notify">5</i>
+                        </div>
+                    </li>
+                    <li>
+                            <div class="profile clearfix">
+                                <div class="avator">
+                                    <img src="./images/Face1.png" alt="用户名">
+                                </div>
+                                <div class="desc">
+                                        <div class="name">Coman.Kaaka</div>
+                                    <div class="role">Administrator</div>
+                                </div>
+                                <i class="com-date">5Min</i>
+                            </div>
+                            <div class="detail">
+                                <p class="text">
+                                        I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                </p>
+                                <i class="icon-notify">5</i>
+                            </div>
+                        </li>
+                        <li>
+                                <div class="profile clearfix">
+                                    <div class="avator">
+                                        <img src="./images/Face1.png" alt="用户名">
+                                    </div>
+                                    <div class="desc">
+                                            <div class="name">Coman.Kaaka</div>
+                                        <div class="role">Administrator</div>
+                                    </div>
+                                    <i class="com-date">5Min</i>
+                                </div>
+                                <div class="detail">
+                                    <p class="text">
+                                           I have decided to switch?
+                                    </p>
+                                    <i class="icon-notify">5</i>
+                                </div>
+                            </li>
+                            <li>
+                                    <div class="profile clearfix">
+                                        <div class="avator">
+                                            <img src="./images/Face1.png" alt="用户名">
+                                        </div>
+                                        <div class="desc">
+                                                <div class="name">Coman.Kaaka</div>
+                                            <div class="role">Administrator</div>
+                                        </div>
+                                        <i class="com-date">5Min</i>
+                                    </div>
+                                    <div class="detail">
+                                        <p class="text">
+                                                Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                        </p> 
+                                    </div>
+                                </li>
+                                <li>
+                                        <div class="profile clearfix">
+                                            <div class="avator">
+                                                <img src="./images/Face1.png" alt="用户名">
+                                            </div>
+                                            <div class="desc">
+                                                    <div class="name">Coman.Kaaka</div>
+                                                <div class="role">Administrator</div>
+                                            </div>
+                                            <i class="com-date">Yesterday</i>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text">
+                                                    Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                            </p>
+                                            <i class="icon-notify">5</i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                            <div class="profile clearfix">
+                                                <div class="avator">
+                                                    <img src="./images/Face1.png" alt="用户名">
+                                                </div>
+                                                <div class="desc">
+                                                        <div class="name">Coman.Kaaka</div>
+                                                    <div class="role">Administrator</div>
+                                                </div>
+                                                <i class="com-date">5Min</i>
+                                            </div>
+                                            <div class="detail">
+                                                <p class="text">
+                                                        Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                                </p>
+                                                <i class="icon-notify">5</i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                                <div class="profile clearfix">
+                                                    <div class="avator">
+                                                        <img src="./images/Face1.png" alt="用户名">
+                                                    </div>
+                                                    <div class="desc">
+                                                            <div class="name">Coman.Kaaka</div>
+                                                        <div class="role">Administrator</div>
+                                                    </div>
+                                                    <i class="com-date">15 Jun</i>
+                                                </div>
+                                                <div class="detail">
+                                                    <p class="text">
+                                                            Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                                    </p>
+                                                    <i class="icon-notify">5</i>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                    <div class="profile clearfix">
+                                                        <div class="avator">
+                                                            <img src="./images/Face1.png" alt="用户名">
+                                                        </div>
+                                                        <div class="desc">
+                                                                <div class="name">Coman.Kaaka</div>
+                                                            <div class="role">Administrator</div>
+                                                        </div>
+                                                        <i class="com-date">5Min</i>
+                                                    </div>
+                                                    <div class="detail">
+                                                        <p class="text">
+                                                                Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                                        </p>
+                                                        <i class="icon-notify">5</i>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                        <div class="profile clearfix">
+                                                            <div class="avator">
+                                                                <img src="./images/Face1.png" alt="用户名">
+                                                            </div>
+                                                            <div class="desc">
+                                                                    <div class="name">Coman.Kaaka</div>
+                                                                <div class="role">Administrator</div>
+                                                            </div>
+                                                            <i class="com-date">5Min</i>
+                                                        </div>
+                                                        <div class="detail">
+                                                            <p class="text">
+                                                                    Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                                            </p>
+                                                            <i class="icon-notify">5</i>
+                                                        </div>
+                                                    </li><li>
+                                                            <div class="profile clearfix">
+                                                                <div class="avator">
+                                                                    <img src="./images/Face1.png" alt="用户名">
+                                                                </div>
+                                                                <div class="desc">
+                                                                        <div class="name">Coman.Kaaka</div>
+                                                                    <div class="role">Administrator</div>
+                                                                </div>
+                                                                <i class="com-date">5Min</i>
+                                                            </div>
+                                                            <div class="detail">
+                                                                <p class="text">
+                                                                        Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                                                </p>
+                                                                <i class="icon-notify">5</i>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                                <div class="profile clearfix">
+                                                                    <div class="avator">
+                                                                        <img src="./images/Face1.png" alt="用户名">
+                                                                    </div>
+                                                                    <div class="desc">
+                                                                            <div class="name">Coman.Kaaka</div>
+                                                                        <div class="role">Administrator</div>
+                                                                    </div>
+                                                                    <i class="com-date">5Min</i>
+                                                                </div>
+                                                                <div class="detail">
+                                                                    <p class="text">
+                                                                            Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                                                    </p>
+                                                                    <i class="icon-notify">5</i>
+                                                                </div>
+                                                            </li><li>
+                                                                    <div class="profile clearfix">
+                                                                        <div class="avator">
+                                                                            <img src="./images/Face1.png" alt="用户名">
+                                                                        </div>
+                                                                        <div class="desc">
+                                                                                <div class="name">Coman.Kaaka</div>
+                                                                            <div class="role">Administrator</div>
+                                                                        </div>
+                                                                        <i class="com-date">5Min</i>
+                                                                    </div>
+                                                                    <div class="detail">
+                                                                        <p class="text">
+                                                                                Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                                                        </p>
+                                                                        <i class="icon-notify">5</i>
+                                                                    </div>
+                                                                </li><li>
+                                                                        <div class="profile clearfix">
+                                                                            <div class="avator">
+                                                                                <img src="./images/Face1.png" alt="用户名">
+                                                                            </div>
+                                                                            <div class="desc">
+                                                                                    <div class="name">Coman.Kaaka</div>
+                                                                                <div class="role">Administrator</div>
+                                                                            </div>
+                                                                            <i class="com-date">5Min</i>
+                                                                        </div>
+                                                                        <div class="detail">
+                                                                            <p class="text">
+                                                                                    Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                                                            </p>
+                                                                            <i class="icon-notify">5</i>
+                                                                        </div>
+                                                                    </li>
+                </ul>
+            </div>
+            <div class="message">
+                <ul>
+                    <li>
+                        <div class="avator">
+                            <img src="./images/Face1.png" alt="用户名">
+                        </div>
+                        <div class="title">
+                            <span class="usr-name">Justing Bibo</span>
+                            <spanclass="msg-time">8:30 AM</span>
+                        </div>
+                        <div class="msg-content">
+                                I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.
+                        </div>
+                    </li>
+                    <li class="space-line"><span>Hello world</span></li>
+                    <li>
+                            <div class="avator">
+                                <img src="./images/Face1.png" alt="用户名">
+                            </div>
+                            <div class="title">
+                                <span class="usr-name">Justing Bibo</span>
+                                <spanclass="msg-time">8:30 AM</span>
+                            </div>
+                            <div class="msg-content">
+                                    I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.
+                                    <div class="msg-img">
+                                        <div class="imgs">
+                                            <img src="./images/Photo1.png" alt="">
+                                            <div class="mask"></div>
+                                            <i class="icon-zoom"></i>
+                                        </div>  
+                                        <div class="imgs">
+                                                <img src="./images/Photo1.png" alt="">
+                                                <div class="mask"></div>
+                                                <i class="icon-zoom"></i>
+                                            </div> 
+                                            <div class="imgs">
+                                                    <img src="./images/Photo1.png" alt="">
+                                                    <div class="mask"></div>
+                                                    <i class="icon-zoom"></i>
+                                                </div> 
+                                                <div class="imgs">
+                                                        <img src="./images/Photo1.png" alt="">
+                                                        <div class="mask"></div>
+                                                        <i class="icon-zoom"></i>
+                                                    </div>                                                                               
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                                <div class="avator">
+                                    <img src="./images/Face1.png" alt="用户名">
+                                </div>
+                                <div class="title">
+                                    <span class="usr-name">Justing Bibo</span>
+                                    <spanclass="msg-time">8:30 AM</span>
+                                </div>
+                                <div class="msg-content">
+                                        I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.
+                                </div>
+                            </li>
+                            <li class="space-line"><span>Hello world</span></li><li>
+                                    <div class="avator">
+                                        <img src="./images/Face1.png" alt="用户名">
+                                    </div>
+                                    <div class="title">
+                                        <span class="usr-name">Justing Bibo</span>
+                                        <spanclass="msg-time">8:30 AM</span>
+                                    </div>
+                                    <div class="msg-content">
+                                            I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.
+                                    </div>
+                                </li>                        
+                                        <li>
+                                                <div class="avator">
+                                                    <img src="./images/Face1.png" alt="用户名">
+                                                </div>
+                                                <div class="title">
+                                                    <span class="usr-name">Justing Bibo</span>
+                                                    <spanclass="msg-time">8:30 AM</span>
+                                                </div>
+                                                <div class="msg-content">
+                                                        I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.
+                                                </div>
+                                            </li>
+                                            <li>
+                                                    <div class="avator">
+                                                        <img src="./images/Face1.png" alt="用户名">
+                                                    </div>
+                                                    <div class="title">
+                                                        <span class="usr-name">Justing Bibo</span>
+                                                        <spanclass="msg-time">8:30 AM</span>
+                                                    </div>
+                                                    <div class="msg-content">
+                                                            I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.
+                                                    </div>
+                                                </li>
+                                              <li>
+                                                        <div class="avator">
+                                                            <img src="./images/Face1.png" alt="用户名">
+                                                        </div>
+                                                        <div class="title">
+                                                            <span class="usr-name">Justing Bibo</span>
+                                                            <spanclass="msg-time">8:30 AM</span>
+                                                        </div>
+                                                        <div class="msg-content">
+                                                                I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.
+                                                                <div class="msg-img">
+                                                                        <div class="imgs">
+                                                                                <img src="./images/Photo1.png" alt="">
+                                                                                <div class="mask"></div>
+                                                                                <i class="icon-zoom"></i>
+                                                                            </div>  
+                                                                            <div class="imgs">
+                                                                                    <img src="./images/Photo1.png" alt="">
+                                                                                    <div class="mask"></div>
+                                                                                    <i class="icon-zoom"></i>
+                                                                                </div> 
+                                                                </div>
+                                                         </div>
+                                                    </li>
+                                                    <li>
+                                                            <div class="avator">
+                                                                <img src="./images/Face1.png" alt="用户名">
+                                                            </div>
+                                                            <div class="title">
+                                                                <span class="usr-name">Justing Bibo</span>
+                                                                <spanclass="msg-time">8:30 AM</span>
+                                                            </div>
+                                                            <div class="msg-content">
+                                                                    I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.
+                                                            </div>
+                                                        </li>
+                                                        <li class="space-line"><span>Hello world</span></li>
+                </ul>     
+                <div class="msg-input">
+                    <span><i class="icon-plus"></i></span><input type="text" placeholder="请输入聊天信息 ">
+                </div>           
+            </div>
+           
+        </div>
+
+
+
+
+
+        
+    </div>
+    
+</body>
+</html>
