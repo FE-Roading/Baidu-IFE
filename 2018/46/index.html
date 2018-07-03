@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<style type="text/css">
+	.row{
+		min-width: 500px;
+		max-width: 1000px;
+		border:2px solid blue;
+		margin: 0 auto;
+		padding: 10px;
+	}
+</style>
+<body>       
+	<h1 id="wellcome" style="text-align: center;"></h1> 
+	<script type="text/javascript">
+		var title=document.getElementById("wellcome")
+		setInterval(function(){
+				var d=new Date()
+				title.innerHTML="你好，现在时间是："+d.toLocaleString()
+		},1000)
+	</script>
+		<div class="row">
+			<h2>1.运算编码</h2>
+			    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        var res=document.getElementById("result")
+        var bts=document.getElementsByTagName("button")
+        var ins=document.getElementsByTagName("input")
+        function cal(ins,code){
+            var r=""
+            if(ins[0].value=="" || ins[1].value==""){
+                 r="请输入待运算的数值"
+            }else{
+                try{
+                    var ins0=Number(ins[0].value)
+                    var ins1=Number(ins[1].value)
+                    if(ins1==0 && code==="/"){
+                    	throw Error;
+                    }
+                    r=eval(ins0+code+ins1)
+                }catch{
+                    r="请输入正确的运算数字"
+                }
+            }
+            res.innerHTML="运算结果："+r
+        }
+        for (var i = bts.length - 1; i >= 0; i--) {            
+            switch(bts[i].id){
+                case "add-btn":
+                    bts[i].onclick=function(e){
+                        cal(ins,"+")                        
+                    }                    
+                    break;
+                case "minus-btn":
+                    bts[i].onclick=function(e){
+                            cal(ins,"-")                        
+                        }  
+                    break;
+                case "times-btn":
+                    bts[i].onclick=function(e){
+                            cal(ins,"*")                        
+                        }  
+                    break;
+                case "divide-btn":
+                    bts[i].onclick=function(e){
+                        cal(ins,"/")                        
+                    }  
+                    break;
+
+            }
+        }
+    </script>
+		</div>
+		<div class="row">
+				<h2>2.进制转换</h2>
+		    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+		    <button id="trans-btn">转化为二进制</button>
+		    <p id="result2222">运算结果</p>
+		    <script>
+
+						function dec2bin(decNumber) {
+						    var res=""
+						    while(decNumber>1){
+						    	res=decNumber%2+res;
+						    	decNumber=Math.floor((decNumber/2))
+						    }
+						    res=decNumber+res
+						    return res
+						}
+						var res=document.getElementById("result2222")
+						var input=document.getElementById("dec-number")
+
+						document.getElementById("trans-btn").onclick=function(e){
+								var v;
+								try{
+										v=parseInt(input.value)
+										if(v<0) throw Error
+										res.innerHTML="运算结果："+dec2bin(v)
+								}catch{
+										res.innerHTML="运算结果： 请输入一个十进制非负整数"
+								}
+						}
+
+		    </script>
+		</div>
+		<div class="row">
+				<h2>3.进制转换增强</h2>
+		    <input id="dec-number333" type="number" placeholder="输入一个十进制非负整数">
+		    <input id="bin-bit333" type="number" placeholder="输入转化后二进制数字位数">
+		    <button id="trans-btn333">转化为二进制</button>
+		    <p id="result333">运算结果</p>
+		    <script>
+
+		    		function toPosInt(value){
+		    			// 如果不符合要求，则返回-1
+		    				var v;
+		    				try{
+										v=parseInt(value)
+										if(v<0) throw Error
+								}catch{
+										v=-1;
+								}
+								return v;
+		    		}
+						function dec2bin(decNumber) {
+						    var res=""
+						    while(decNumber>1){
+						    	res=decNumber%2+res;
+						    	decNumber=Math.floor((decNumber/2))
+						    }
+						    res=decNumber+res
+						    return res
+						}
+						function zeroString(n){
+							 return Array(n+1).join("0")
+						}
+						var res=document.getElementById("result333")
+						var input=document.getElementById("dec-number333")
+						var binbit=document.getElementById("bin-bit333")
+
+
+						document.getElementById("trans-btn333").onclick=function(e){
+								var inputV=toPosInt(input.value)
+								var bit=toPosInt(binbit.value)
+								if (inputV==-1 || bit==-1) {
+									console.log("对不起，您的数据输入正整数要求")
+								}else{
+									var binV=dec2bin(inputV);
+									if(binV.length>bit){
+										console.log("对比起，您输入的bit位数小于转换后的位数")
+									}else{
+										binV=zeroString(bit-binV.length)+binV
+									}
+									res.innerHTML="运算结果："+binV
+								}
+						}
+
+		    </script>
+		</div>
+		<div class="row">
+			<table id="xjj" border="1" style="border-collapse: collapse;">
+				<caption>九九乘法表</caption>
+			</table>
+			<script type="text/javascript">
+				var tjj=document.getElementById("xjj")				
+				for (var i = 1; i <10; i++) {
+					var tc=document.createElement("tr")
+					for (var j = 1; j <=i; j++) {
+						tc.innerHTML+="<td>"+j+" x "+i+" = "+i*j+"</td>"						
+					}
+					tjj.appendChild(tc)				}
+
+			</script>
+			<style type="text/css">
+				#xjj td{
+					padding: 10px;
+				}
+			</style>
+		</div>
+</body>
+</html>
