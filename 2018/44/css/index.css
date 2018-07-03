@@ -1,4 +1,4 @@
-﻿@font-face {
+@font-face {
 	font-family: 'ProximaNova';
 	src: url('fonts/ProximaNova-Regular.eot');
 	src: local('☺')url('../fonts/ProximaNova-Regular.woff') format('woff'), url('fonts/ProximaNova-Regular.ttf') format('truetype'), url('fonts/ProximaNova-Regular.svg') format('svg');
@@ -16,7 +16,10 @@
 body {
     font: normal 14px/19px "ProximaNova", Arial, Verdana, "\5b8b\4f53";
     color: #666;
-    background: #fff
+    background: #fff;
+    overflow: hidden;
+//    -ms-overflow-style: none;  // IE 10+
+//    overflow: -moz-scrollbars-none;  // Firefox */
 }
 i{
     display: inline-block;
@@ -136,6 +139,9 @@ i{
 .chat{
     margin-left: 350px;
     height: 100%;
+    overflow: hidden;
+/*     -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox */
 }
 .chat .head{
     box-sizing: border-box;
@@ -293,6 +299,8 @@ i{
     top: 0;
     left: 0;
     overflow: auto;
+/*     -ms-overflow-style: none;  // IE 10+ */
+/*    overflow: -moz-scrollbars-none;  // Firefox */
 }
 .chat .contact-list li{
     box-sizing: border-box;
@@ -368,6 +376,8 @@ i{
     bottom: 0;
     right: 0;
     overflow: auto;
+/*     -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox */
 }
 .chat .message li{
     position: relative;
@@ -610,6 +620,9 @@ i{
     color: rgba(159, 169, 187, 0.8);
 }
 
+::-moz-placeholder{
+    color: rgba(159, 169, 187, 0.8);
+}
 
 
 ::-webkit-scrollbar{
