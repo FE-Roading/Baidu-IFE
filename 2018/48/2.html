@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<div>
+    <label>String A:
+        <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+    </label>
+    <textarea id="str-a"></textarea>
+    <label>String B:
+        <input id="radio-b" type="radio" name="str-obj" value="b">
+    </label>
+    <textarea id="str-b"></textarea>        
+    <label>Num A：<input id="num-a" type="number" value="0"></label>
+    <label>Num B：<input id="num-b" type="number" value="1"></label>
+</div>
+<div>
+    <button onclick="getCurrentContent()">获取当前选中输入的内容长度</button>
+    <button onclick="get3rdChar()">当前选中输入中的第3个字符</button>
+    <button onclick="concat()">把两个输入框的文字连接在一起输出（concat）</button>
+    <button onclick="BIndexOfA()">输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+    <button onclick="ALastOfB()">输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+    <button onclick="slice()">使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+    <button onclick="getCurCols()">当前选中输入框的行数</button>
+    <button onclick="substr()">使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+    <button onclick="upperCase()">把所选输入框中的内容全部转为大写</button>
+    <button onclick="lowerCase()">把所选输入框中的内容全部转为小写</button>
+    <button onclick="trim()">把所选输入框中内容的半角空格全部去除</button>
+    <button onclick="replace()">把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+</div>
+<p id="result"></p>
+<script>
+		var ra=document.getElementById("radio-a");
+		var rb=document.getElementById("radio-b");
+		var ia=document.getElementById("str-a");
+		var ib=document.getElementById("str-b");
+		var na=document.getElementById("num-a");
+		var nb=document.getElementById("num-b");
+		var result=document.getElementById("result");
+
+		function getCurrentInput(){
+			if(ra.checked){
+				return ia
+			}else if(rb.checked){
+				return ib
+			}
+		}
+		function print(val){
+			result.innerHTML=val
+		}
+
+		function getCurrentContent(){
+			var cur=getCurrentInput()
+			if(cur){
+				print(cur.value)
+			}else{
+				print("您未选中任何输入框！")
+			}
+		}
+		function get3rdChar(){
+			var cur=getCurrentInput()
+			if(cur){
+				print(cur.value[2])
+			}else{
+				print("您未选中任何输入框！")
+			}
+		}
+		function concat(){
+			print(ia.value+ib.value)
+		}
+		function BIndexOfA(){
+			print(ia.value.indexOf(ib.value))
+		}
+		function ALastOfB(){
+			print(ib.value.lastIndexOf(ia.value))
+		}
+		function slice(){
+			var cur=getCurrentInput()
+			if(cur){
+				print(cur.value.slice(parseInt(na.value),parseInt(nb.value)))
+			}else{
+				print("您未选中任何输入框！")
+			}
+		}
+		function substr(){
+			var cur=getCurrentInput()
+			if(cur){
+				print(cur.value.substring(parseInt(na.value),parseInt(nb.value)))
+			}else{
+				print("您未选中任何输入框！")
+			}
+		}
+		function getCurCols(){
+			var cur=getCurrentInput()
+			if(cur){
+				print(cur.cols)
+			}else{
+				print("您未选中任何输入框！")
+			}
+		}
+		function upperCase(){
+			var cur=getCurrentInput()
+			if(cur){
+				print(cur.value.toUpperCase())
+			}else{
+				print("您未选中任何输入框！")
+			}
+		}
+		function lowerCase(){
+			var cur=getCurrentInput()
+			if(cur){
+				print(cur.value.toLowerCase())
+			}else{
+				print("您未选中任何输入框！")
+			}
+		}
+		function trim(){
+			var cur=getCurrentInput()
+			if(cur){
+				print(cur.value.replace(/\s/g,""))
+			}else{
+				print("您未选中任何输入框！")
+			}
+			
+		}
+		function replace(){
+			if(ra.checked){
+				ia.value=ib.value
+			}else if(rb.checked){
+				ib.value=ia.value
+			}else{
+				print("您未选中任何输入框！")
+			}
+		}
+
+
+</script>
+	
+</body>
+</html>

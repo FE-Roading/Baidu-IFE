@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input id="queue-input" type="text">
+	<p id="queue-cont">队列内容：apple-&gt;pear</p>    
+	<button id="in-btn" onclick="append()">入队</button>
+	<button id="out-btn" onclick="shift()">出队</button>
+	<button id="font-btn" onclick="first()">打印队头元素内容</button>
+	<button id="empty-btn" onclick="isEmpty()">判断队列是否为空</button>
+
+<script>
+
+var queue = ["apple", "pear"];
+var i=document.getElementById("queue-input")
+var add=document.getElementById("in-btn")
+var del=document.getElementById("out-btn")
+var print=document.getElementById("font-btn")
+var clear=document.getElementById("empty-btn")
+var r=document.getElementById('queue-cont')
+
+function append(){
+	var iv=i.value.trim()
+	if(iv.length>0){
+		queue.push(iv)
+		r.innerHTML="成功入列数据："+iv
+	}else{
+		r.innerHTML="请输入非空字符"
+	}
+}
+function shift(){
+	var res=queue.shift()
+	r.innerHTML="成功出列数据："+res
+}
+function first(){
+	r.innerHTML="队头元素内容"+queue[0]
+}
+function isEmpty(){
+	if(queue.length>0){
+		r.innerHTML="队列不为空，现有数据为："+queue.join(",")
+	}else{
+		r.innerHTML="队列为空!"
+	}
+}
+
+
+</script>
+</body>
+</html>
