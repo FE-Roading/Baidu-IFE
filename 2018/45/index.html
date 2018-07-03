@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        var res=document.getElementById("result")
+        var bts=document.getElementsByTagName("button")
+        var ins=document.getElementsByTagName("input")
+        function cal(ins,code){
+            var r=""
+            if(ins[0].value=="" || ins[1].value==""){
+                 r="请输入待运算的数值"
+            }else{
+                try{
+                    var ins0=Number(ins[0].value)
+                    var ins1=Number(ins[1].value)
+                    r=eval(ins0+code+ins1)
+                }catch{
+                    r="请输入正确的运算数字"
+                }
+            }
+            res.innerHTML="运算结果："+r
+        }
+        for (var i = bts.length - 1; i >= 0; i--) {            
+            switch(bts[i].id){
+                case "add-btn":
+                    bts[i].onclick=function(e){
+                        cal(ins,"+")                        
+                    }                    
+                    break;
+                case "minus-btn":
+                    bts[i].onclick=function(e){
+                            cal(ins,"-")                        
+                        }  
+                    break;
+                case "times-btn":
+                    bts[i].onclick=function(e){
+                            cal(ins,"*")                        
+                        }  
+                    break;
+                case "divide-btn":
+                    bts[i].onclick=function(e){
+                        cal(ins,"*")                        
+                    }  
+                    break;
+
+            }
+        }
+
+    </script>
+</body>
+</html>
