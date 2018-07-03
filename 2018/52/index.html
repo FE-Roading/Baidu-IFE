@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		font: bold 16px/1.5 "楷体","Microsoft YaHei",Arial;
+	}
+	.wrapper{
+		width: 500px;
+		margin: 100px auto;
+		text-align: center;
+	}
+	input{
+		padding: 5px 5px 5px 1em;
+		width: 200px;
+		outline: none;
+		font:inherit;
+	}
+	ul{
+		list-style: none;
+		position: absolute;
+    margin: 0;
+    margin-left: 150px;
+    padding: 0;
+    text-align: left;
+	}
+	ul li{
+		padding: 5px 5px 5px 1em;
+		width: 200px;
+	}
+	ul li:hover,ul li.active{
+		background-color: lightblue;
+		color: #fff;
+	}
+</style>
+<body>
+		<div class="wrapper">
+    <input id="email-input" type="text" placeholder="请输入邮箱名" autofocus>
+    <ul id="email-sug-wrapper" class="email-sug"></ul>
+</div>
+<script>
+		var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+		var email=document.getElementById("email-input")
+		var esug=document.getElementById("email-sug-wrapper")
+		var liIndex=0;
+		
+		email.oninput=function(event){
+			var ename=event.target.value			
+			var elist;
+			liIndex=0;
+			ename=enameTidy(ename)
+
+			if(ename[0]==""){
+				esugHide()
+			}else{
+				esugShow()
+				elist=emailConcat(ename)
+				renderToList(elist)
+			}	
+		}
+		email.onkeydown=function(event){
+			/*
+				KeyboardEvent {isTrusted: true, key: "ArrowUp", code: "ArrowUp", location: 0, ctrlKey: false, …}
+				KeyboardEvent {isTrusted: true, key: "ArrowDown", code: "ArrowDown", location: 0, ctrlKey: false, …}
+				KeyboardEvent {isTrusted: true, key: "Enter", code: "NumpadEnter", location: 3, ctrlKey: false, …}
+				KeyboardEvent {isTrusted: true, key: "Enter", code: "Enter", location: 0, ctrlKey: false, …}
+			*/
+				switch (event.key) {
+					case "ArrowUp":
+						liMoveUp(true)
+						break;
+					case "ArrowDown":
+						liMoveUp(false)
+						break;
+					case "Enter":
+						var esug=document.getElementById("email-sug-wrapper")
+						renderToInput(esug.children[liIndex].innerHTML)
+						esugHide()
+						break;
+					case "Escape":
+						event.target.select()
+						break;
+				}
+		}
+
+
+		function liMoveUp(up){
+			var esug=document.getElementById("email-sug-wrapper")
+			var eList=esug.children
+			if(up){
+				liIndex=liIndex-1<0?eList.length-1:liIndex-1;
+			}else{
+				liIndex=liIndex>eList.length-2?0:liIndex+1;
+			}
+			for (var i = 0; i < eList.length; i++) {
+				if(i==liIndex){
+					eList[i].className="active"
+				}else{
+					eList[i].className=""
+				}
+				
+			}
+
+		}
+		function enameTidy(ename){
+			ename=ename.replace(/\s/g, "")
+			ename=ename.split("@",2)
+			return ename
+		}
+		function emailConcat(ename){			
+			var list=""
+			var firstFlag=true
+			if(ename[1]){
+				for (mail of postfixList) {
+					if(mail.indexOf(ename[1])!=-1){
+						if(firstFlag){
+							list+='<li class="active">'+ename[0]+'@'+mail+'</li>'
+							firstFlag=false
+						}else{
+							list+="<li>"+ename[0]+"@"+mail+"</li>"
+						}
+						
+					}					
+				}
+			}else {
+				for (mail of postfixList) {
+					if(firstFlag){
+							list+='<li class="active">'+ename[0]+'@'+mail+'</li>'
+							firstFlag=false
+						}else{
+							list+="<li>"+ename[0]+"@"+mail+"</li>"
+						}
+				}
+				
+			}
+			
+			return list			
+		}
+		function renderToList(elist){
+			var esug=document.getElementById("email-sug-wrapper")
+			esug.innerHTML=elist
+		}
+		function renderToInput(con){
+			var email=document.getElementById("email-input")
+			email.value=con
+		}
+
+		function esugHide(){
+			var esug=document.getElementById("email-sug-wrapper")
+			esug.style.display="none";
+		}
+		function esugShow(){
+			var esug=document.getElementById("email-sug-wrapper")
+			esug.style.display="block"
+		}
+		function eliConfirmed(event){
+			event.preventDefault()
+			event.stopPropagation()
+			renderToInput(event.target.innerHTML)			
+			esugHide()
+			var email=document.getElementById("email-input")
+			email.focus()
+		}
+
+		esug.addEventListener("click", eliConfirmed)
+
+
+
+</script>
+
+</body>
+</html>
