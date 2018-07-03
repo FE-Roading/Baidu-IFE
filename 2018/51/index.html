@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	function createSelect(start,end,id){
+		var select=document.createElement("select")
+		var root=document.getElementById(id)
+		root.innerHTML=""
+		var s=""
+		select.id=id+"-select"
+		for (var i = start; i <=end; i++) {
+			s+="<option value="+i+">"+i+"</option>"
+		}
+		select.innerHTML=s
+
+		root.append(select)
+	}
+	function init(){
+		createSelect(1990,2090,"nian")
+		createSelect(1,12,"yue")
+		createSelect(1,1,"ri")
+		createSelect(0,23,"shi")
+		createSelect(0,59,"fen")
+		createSelect(0,59,"miao")
+
+	}
+	function updateTime(){
+			var nian=document.getElementById("nian-select").value
+			var yue=document.getElementById("yue-select").value
+			var ri=document.getElementById("ri-select").value
+			var shi=document.getElementById("shi-select").value
+			var fen=document.getElementById("fen-select").value
+			var miao=document.getElementById("miao-select").value
+			var title=document.getElementById("title")
+			var calResult=document.getElementById("calResult")
+
+			var now=new Date()
+			title.innerHTML=now.toLocaleString()
+			var target=new Date(nian,parseInt(yue)-1,ri,shi,fen,miao)
+			var dateDiff=Math.abs(now-target)
+			var days=Math.floor(dateDiff/(1000*3600*24))
+			var leave1=dateDiff%(24*3600*1000)  
+	    var hours=Math.floor(leave1/(3600*1000))
+	    var leave2=leave1%(3600*1000) 
+	    var minutes=Math.floor(leave2/(60*1000))
+	    var leave3=leave2%(60*1000)
+	    var seconds=Math.round(leave3/1000)
+	    calResult.innerHTML="现在距离"+nian+"年"+yue+"月"+ri+"日 "+shi+":"+fen+":"+miao+"\t"+"已经过去"+days+"天"+hours+"小时"+minutes+"分"+seconds+"秒"
+	}
+	function getMaxDay(){
+		var nian=document.getElementById("nian-select")
+		var yue=document.getElementById("yue-select")
+		nian=parseInt(nian.value)
+	  yue=parseInt(yue.value)
+	  return (new Date(nian,yue,1)-new Date(yue-1<0?nian-1:nian,yue-1<0?12:yue-1,2))/(1000*60*60*24)+1
+	}
+	function updateDate(){
+		var maxDay=getMaxDay()
+		createSelect(1,maxDay,"ri")
+	}
+
+	window.onload=function(){		
+			init()
+			var nian=document.getElementById("nian-select")
+			var yue=document.getElementById("yue-select")
+
+			nian.addEventListener("change", updateDate)
+			yue.addEventListener("change",updateDate)
+			updateTime()
+			setInterval(updateTime, 1000)
+	}
+</script>
+<body>
+	<div class="root">
+			<table border="1">
+				<caption id="title"></caption>
+				<tr>
+					<td>年</td>
+					<td>月</td>
+					<td>日</td>
+					<td>时</td>
+					<td>分</td>
+					<td>秒</td>
+				</tr>
+				<tr>
+					<td id="nian"></td>
+					<td id="yue"></td>
+					<td id="ri"></td>
+					<td id="shi"></td>
+					<td id="fen"></td>
+					<td id="miao"></td>
+				</tr>
+				<tr>
+					<td colspan="6" id="calResult"></td>
+				</tr>
+
+			</table>
+	</div>
+<style>
+	.root{
+		min-width: 500px;
+		max-width: 800px;
+		margin:0 auto;
+		text-align: center;
+	}
+</style>
+
+</body>
+</html>
