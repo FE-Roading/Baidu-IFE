@@ -149,7 +149,7 @@ window.onload = function () {
         chb.onchange = function (event) {
             if (event.target.checked) {
                 if (event.target.id.indexOf("全选") != -1) {
-                    event.preventDefault()
+                     chkCheckAll(event.target.name)
                 } else {
                     if (allChecked(event.target.name)) {
                         chkCheckAll(event.target.name)
