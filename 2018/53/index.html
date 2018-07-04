@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Data dashboard V1</title>
+	<link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+	<div id="table-wrapper">
+		<table border="1">
+			<caption id="title">Data dashboard</caption>
+			<thead>
+				<tr>
+					<th>地区</th>
+					<th>商品</th>
+					<th>1月</th>
+					<th>2月</th>
+					<th>3月</th>
+					<th>4月</th>
+					<th>5月</th>
+					<th>6月</th>
+					<th>7月</th>
+					<th>8月</th>
+					<th>9月</th>
+					<th>10月</th>
+					<th>11月</th>
+					<th>12月</th>
+				</tr>
+			</thead>
+			<tbody id="dashboard">
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>商品选择：</td>
+					<td colspan="13" id="product-chb">							
+					</td>
+				</tr>
+				<tr>
+					<td>地区选择：</td>
+					<td colspan="13" id="region-chb">						
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<script type="text/javascript" src="./data.js"></script>
+	<script type="text/javascript" src="./index.js"></script>
+</body>
+
+</html>

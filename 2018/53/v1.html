@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Data dashboard V1</title>
+</head>
+<body>
+	<select id="region-select">		
+	</select>
+	<select id="product-select">		
+	</select>
+	<!-- <select id="month-select">		 -->
+	</select>
+	<div id="table-wrapper">
+		<table >
+			<caption id="title">Data dashboard</caption>
+			<thead>
+				<tr>
+				<th>地区</th>
+				<th>商品</th>
+				<th>1月</th>
+				<th>2月</th>
+				<th>3月</th>
+				<th>4月</th>
+				<th>5月</th>
+				<th>6月</th>
+				<th>7月</th>
+				<th>8月</th>
+				<th>9月</th>
+				<th>10月</th>
+				<th>11月</th>
+				<th>12月</th>
+			</tr>
+			</thead>
+			<tbody id="dashboard">
+				
+			</tbody>
+		</table>
+	</div>
+	<script>
+		var sourceData = [{
+		    product: "手机",
+		    region: "华东",
+		    sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
+		}, {
+		    product: "手机",
+		    region: "华北",
+		    sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
+		}, {
+		    product: "手机",
+		    region: "华南",
+		    sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
+		}, {
+		    product: "笔记本",
+		    region: "华东",
+		    sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
+		}, {
+		    product: "笔记本",
+		    region: "华北",
+		    sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
+		}, {
+		    product: "笔记本",
+		    region: "华南",
+		    sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
+		}, {
+		    product: "智能音箱",
+		    region: "华东",
+		    sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
+		}, {
+		    product: "智能音箱",
+		    region: "华北",
+		    sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
+		}, {
+		    product: "智能音箱",
+		    region: "华南",
+		    sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
+		}]
+	</script>
+
+	<script>
+		/*
+region-select的change事件 = function() {
+    渲染新的表格()
+}
+
+function 根据select选项获取数据() {
+    遍历数据 {
+        向要返回的数据list中添加符合表单所选项的数据
+    }
+    返回数据
+}
+
+function 渲染新的表格() {
+    根据表单选项获取数据
+    渲染表格
+}
+		*/
+		var region=document.getElementById("region-select")
+		var product=document.getElementById("product-select")
+		// var month=document.getElementById("month-select")
+		var dashboard=document.getElementById("dashboard")
+		var title=document.getElementById("title")
+
+
+		function dataGet(){
+			//获取需要展示的商品名和销售地区，并去除重复项次
+			var regions=[]
+			var products=[]
+			for (var i = 0; i < sourceData.length; i++) {
+				if(regions.indexOf(sourceData[i].region)==-1){
+					regions.push(sourceData[i].region)
+				}
+				if(products.indexOf(sourceData[i].product)==-1){
+					products.push(sourceData[i].product)
+				}				
+			}
+			return {"地区":regions,"产品":products}
+		}
+
+		function genMonth(len){
+			var arr=new Array(len).join(",").split(",")
+			return arr.map(function(item,index){return index+1})
+		}
+		function genSelect(data){
+			var lis=[]
+
+			for(var key in data){
+				var s="<option>"+key+"</option>"
+				for (var obj in data[key]) {
+					s+="<option>"+data[key][obj]+"</option>"
+				}
+				lis.push(s)
+			}
+			return lis
+		}
+		function selectRenderToHTML(lis){
+			region.innerHTML=lis[0]
+			product.innerHTML=lis[1]
+		}
+		function fetchRenderData(){
+			var datas=dataGet()
+			var showDatas={}
+			console.log(region.value,product.value)
+			if(region.value!="地区"){
+				datas["地区"]=[region.value]
+			}
+			if(product.value!="产品"){
+				datas["产品"]=[product.value]
+			}
+			for(obj of datas["地区"]){
+				showDatas[obj]=[]
+			}
+			for (obj of sourceData) {
+				if(datas["地区"].indexOf(obj.region)!=-1 && datas["产品"].indexOf(obj.product)!=-1){			
+					var temp={}	
+					temp[obj.product]=obj.sale
+					showDatas[obj.region].push(temp)
+				}				
+			}
+			console.log(showDatas)
+			return showDatas
+		}
+		function tableRenderToHTML(showDatas){
+			var ts=""
+			for(obj in showDatas){  //地区		
+				var reg=	""
+				if(showDatas[obj].length>1){
+					reg='<td rowspan="'+showDatas[obj].length+'">'+obj+"</td>"
+				}else{
+					reg='<td>'+obj+"</td>"
+				}
+				for(prods of showDatas[obj]){
+					for(prod in prods){
+						var s="<tr>"+reg
+						reg=""					
+						s+="<td>"+prod+"</td>"
+						for(sale of prods[prod]){
+							s+="<td>"+sale+"</td>"
+						}
+						ts+=s+"</tr>"							
+					}
+					
+				}
+				
+			}
+			dashboard.innerHTML=ts		
+
+		}
+
+		function init(){
+			var datas=dataGet()
+			var lis=genSelect(datas)
+			selectRenderToHTML(lis)
+			tableRenderToHTML()
+			var showDatas=fetchRenderData()
+			tableRenderToHTML(showDatas)
+		}
+
+		init()
+		region.onchange=function(event){
+			var showDatas=fetchRenderData()
+			tableRenderToHTML(showDatas)
+
+		}
+		product.onchange=function(event){
+			var showDatas=fetchRenderData()
+			tableRenderToHTML(showDatas)
+		}
+
+
+	</script>
+</body>
+</html>
