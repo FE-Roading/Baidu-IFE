@@ -116,7 +116,7 @@ function tableRenderToHTML(showDatas) {
         }
         var temp;
         if(previousRegion!=orderData[data].region){
-            temp= '<tr><td rowspan="' + orderData[orderData[data].region] + '">' + orderData[data].region+ '</td><td class="product" data-no="'+data+'">'+orderData[data].product+"</td>"
+            temp= '<tr><td rowspan="' + orderData[orderData[data].region] + '">' + orderData[data].region+ '</td><td class="product" data-no="'+orderData[data].index+'">'+orderData[data].product+"</td>"
         }else{
             temp='<tr><td class="product" data-no="'+orderData[data].index+'">'+orderData[data].product+'</td>'
         }
@@ -133,7 +133,9 @@ function tableRenderToHTML(showDatas) {
     barCan.barDrawing(showDatas)
 }
 
-window.onhashchange=function(event){
+window.onhashchange=hashChange
+
+function hashChange(){
     
     var hash=decodeURI(window.location.hash)
     hash=hash.replace(/[\#\w\=]/g,"").replace(/\&/g,"-")
@@ -199,6 +201,7 @@ function init() {
     var datas = dataGet()
     var lis = genCkb(datas)
     chbRenderToHTML(lis)
+    hashChange()
 }
 function  checkboxEventBind() {
     /*选择框的事件处理*/
@@ -362,9 +365,6 @@ window.onload = function () {
     init()    
     data=fetchRenderData()
     tableRenderToHTML(data)
-
-    var hashEvent=new HashChangeEvent({})
-    window.dispatchEvent(hashEvent)
 
     linCan.lineDrawing(data)
     barCan.barDrawing(data)
