@@ -69,7 +69,7 @@ function updateHash(){
     datas["地区"] = chkGetCheckedIds("地区")
     datas["产品"] = chkGetCheckedIds("产品")
 
-    window.location.hash="#region="+datas["地区"].join("-")+"&producti="+datas["产品"].join("-")
+    window.location.hash="#region="+datas["地区"].join("-")+"&product="+datas["产品"].join("-")
 }
 
 
@@ -118,7 +118,7 @@ function tableRenderToHTML(showDatas) {
         if(previousRegion!=orderData[data].region){
             temp= '<tr><td rowspan="' + orderData[orderData[data].region] + '">' + orderData[data].region+ '</td><td class="product" data-no="'+data+'">'+orderData[data].product+"</td>"
         }else{
-            temp='<tr><td class="product" data-no="'+data+'">'+orderData[data].product+'</td>'
+            temp='<tr><td class="product" data-no="'+orderData[data].index+'">'+orderData[data].product+'</td>'
         }
         for(var sale in orderData[data].sale){
             temp+='<td contenteditable="true" class="sale-data" data-id="'+orderData[data].index+"-"+sale+'">'+orderData[data].sale[sale]+'</td>'
