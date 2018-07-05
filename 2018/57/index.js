@@ -33,9 +33,9 @@ function dataGet() {
 function genCkb(data) {
     var lis = []
     for (var key in data) {
-        var temp = '<label for="' + key + '-全选"><input type="checkbox" checked id="' + key + '-全选" name="' + key + '" >全选</label>'
+        var temp = '<label for="' + key + '-全选"><input type="checkbox" id="' + key + '-全选" name="' + key + '" >全选</label>'
         for (var obj of data[key]) {
-            temp += '<label for="' + obj + '"><input type="checkbox" checked id="' + obj + '" name="' + key + '" >' + obj + '</label>'
+            temp += '<label for="' + obj + '"><input type="checkbox" id="' + obj + '" name="' + key + '" >' + obj + '</label>'
         }
         lis.push(temp)
     }
@@ -48,15 +48,11 @@ function chbRenderToHTML(lis) {
 }
 
 function fetchRenderData() {
-
-    var datas = dataGet()
     var showDatas = []
+    var datas=[]
+
     datas["地区"] = chkGetCheckedIds("地区")
     datas["产品"] = chkGetCheckedIds("产品")
-
-    for (obj of datas["地区"]) {
-        showDatas[obj] = []
-    }
 
     for(var i in sourceData){
         if(datas["地区"].indexOf(sourceData[i].region) != -1 && datas["产品"].indexOf(sourceData[i].product) != -1){
@@ -67,6 +63,16 @@ function fetchRenderData() {
 
     return showDatas
 }
+function updateHash(){
+    var datas=[]
+
+    datas["地区"] = chkGetCheckedIds("地区")
+    datas["产品"] = chkGetCheckedIds("产品")
+
+    window.location.hash="#region="+datas["地区"].join("-")+"&producti="+datas["产品"].join("-")
+}
+
+
 function showDataOrderByRegion(showDatas,regions) {
     var data=[]
     regions.forEach(function(item){
@@ -120,12 +126,26 @@ function tableRenderToHTML(showDatas) {
         html+=temp+"</tr>"
         previousRegion=orderData[data].region
     }
-    dashboard.innerHTML = html
+    dashboard.innerHTML = html   
+
     ceilEventBind()    
     linCan.lineDrawing(showDatas)
     barCan.barDrawing(showDatas)
+}
+
+window.onhashchange=function(event){
+    
+    var hash=decodeURI(window.location.hash)
+    hash=hash.replace(/[\#\w\=]/g,"").replace(/\&/g,"-")
+    hash=hash.split("-")
+    for(var i in hash){
+        chkCheckOneByID(hash[i])
+    }
+    this.console.log("hash changed")
+    stateChanged()
 
 }
+
 
 function chkGetCheckedIds(name, check = true) {
     var nodeList = document.getElementsByName(name)
@@ -203,11 +223,19 @@ function  checkboxEventBind() {
                     event.target.checked=true
                 }
             }
-            data=fetchRenderData()
-            tableRenderToHTML(data)
+            // updateHash() 已有hashchanged替代
+            updateHash() 
         }
     }
 }
+
+function stateChanged(){
+
+    data=fetchRenderData()
+    tableRenderToHTML(data)   
+
+}
+
 
 function ceilEventBind() {
     for(var i in saleCeils){
@@ -331,10 +359,13 @@ function readFromLocalStorage() {
 
 
 window.onload = function () {    
-    init()
-    
+    init()    
     data=fetchRenderData()
     tableRenderToHTML(data)
+
+    var hashEvent=new HashChangeEvent({})
+    window.dispatchEvent(hashEvent)
+
     linCan.lineDrawing(data)
     barCan.barDrawing(data)
 
