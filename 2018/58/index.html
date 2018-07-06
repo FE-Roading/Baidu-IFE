@@ -6,25 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        ol {
+            width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .tips{
+            position: fixed;
+            width: 100px;
+            color: purple;
+            background-color: beige;
+            right: 200px;
+            top: 100px;
+            text-align: left;
+            padding: 10px;
+
+        }
+    </style>
 </head>
 
 <body style="text-align: center;">
-    <h1>请查看控制台！</h1>
+    <h1>餐厅的整个运营过程！</h1>
+    <ol id="info-Container"></ol>
+    <div class="tips">
+        在正式打烊之前，您可以在控制台中：新建一个顾客类Customer(name)，并插入到cusWaitList=[]队列中。不过要遵守先来后到哦！
+    </div>
     <script src="./index.js"></script>
     <script>
+        var curCustomer = null;
+        var infoC = document.getElementById("info-Container")
         var ifeRestaurant = new Restaurant({
-            cash: 1000000,
-            seats: 20,
+            cash: 10000,
+            seats: 1,
             staff: []
         });
-
-        var newCook = new Cook("Tony", 10000);
+        var newCook = new Cook("Tony", 3000);
         ifeRestaurant.hire(newCook);
+        var newWaiter = new Waiter("Bob", 2150);
+        ifeRestaurant.hire(newWaiter)
 
-        console.log(ifeRestaurant.staff);
+        for (var i = 0; i < 11; i++) {
+            var cus = new Customer("顾客" + (i + 1))
+            if (ifeRestaurant.seats == 0) {
+                cusWaitList.push(cus)
+                info("接待员：" + cus.name + "[顾客]正在排队")
+            } else {
 
-        ifeRestaurant.fire(newCook);
-        console.log(ifeRestaurant.staff);
+                ifeRestaurant.seats -= 1
+                curCustomer = cus
+                info("接待员：" + curCustomer.name + "[顾客]已入座")
+                curCustomer.order()
+                curCustomer.dish.cus = curCustomer
+                newWaiter.work([curCustomer.dish])
+                newCook.cook()
+            }
+        }
+        var lifeTimer = setInterval(function () {
+            if (curCustomer && curCustomer.finished) {
+                info(curCustomer.name + " 已经用餐完毕！")
+                var temp = cusWaitList.shift()
+                if (temp) {
+                    curCustomer = temp
+                    info("接待员：" + curCustomer.name + "[顾客]已入座")
+                    info("接待员：正在排队的顾客数量为" + cusWaitList.length)
+                    curCustomer.order()
+                    curCustomer.dish.cus = curCustomer
+                    newWaiter.work([curCustomer.dish])
+                    newCook.cook()
+                } else {
+                    info("接待员：" + "已经没有顾客，正式打烊了！")
+                    clearInterval(lifeTimer)
+                }
+            }
+            if (!newCook.cooking && newCook.curdish) {
+                newWaiter.work(newCook.curdish)
+                newCook.curdish = null
+            }
+        }, 1000);
+
+        function info(msg) {
+            var inf = document.createElement("li")
+            inf.innerHTML = msg
+            infoC.insertBefore(inf,infoC.children[0])
+
+        }
     </script>
 </body>
 
