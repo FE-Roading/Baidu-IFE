@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            width: 100px;
+            height: 50px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .aniCon{
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        .ani{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .bottom{
+            background-color: blue;
+            height: 5px;
+            margin-bottom: 15px;            
+            margin:auto;
+        }
+        .bottom{
+            width: 0px;
+            transition: all 0.5s;
+        }
+        .widthani{
+            width: 100px;
+            color: blue;
+            transition: all 0.5s;
+        }
+
+        a{
+            text-decoration: none;
+            display: inline-block;
+            padding:5px;
+            background-color: antiquewhite;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">       
+        <div class="aniCon">
+            <div class="select ani">前端学院</div>
+            <div class="select bottom"></div>
+        </div>
+        <a href="javascript:;" id="button">样式切换</a>
+    </div>
+    <script>
+        var button=document.getElementById("button")
+        var anidiv=document.getElementsByClassName("select")
+
+        button.onclick=function(){
+            for(var i=0;i<anidiv.length;i++){
+                anidiv[i].classList.toggle("widthani")
+            }
+        }
+    </script>
+</body>
+</html>
