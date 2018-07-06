@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width: 500px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .wrapper div{
+            width: 50px;
+            height: 30px;
+            padding: 10px 5px;
+            background-color: antiquewhite;
+            margin-right: 20px;
+            float: left;
+        }
+        .wrapper div:nth-child(2){
+            transform: skew(30deg,0)
+        }
+        .wrapper div:nth-child(3){
+            transform: scaleX(0.5);
+        }
+        .wrapper div:nth-child(4){
+            transform: rotate(45deg);
+        }
+        .wrapper div:nth-child(5){
+            transform: translate(10px,20px);
+        }
+        .wrapper div:nth-child(6){
+            transform: skew(30deg,0) scaleX(0.5) rotate(45deg) translate(10px,20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div>box0</div>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        <div>box5</div>
+    </div>
+</body>
+</html>
