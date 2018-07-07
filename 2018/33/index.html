@@ -13,7 +13,8 @@
             background-color: #888;
             opacity: 0.7;
         }
-        .clearfix::after{
+
+        .clearfix::after {
             content: " ";
             display: list-item;
             clear: both;
@@ -31,7 +32,8 @@
             /* background-color: blue; */
             /* overflow: hidden; */
         }
-        .content{
+
+        .content {
             position: absolute;
             overflow: hidden;
             left: 0;
@@ -40,14 +42,18 @@
             bottom: 0;
             background-size: cover;
         }
-        .content section,.content section img{
+
+        .content section,
+        .content section img {
             height: 700px;
-            width: 1000px;            
+            width: 1000px;
         }
-        .content section{
+
+        .content section {
             position: absolute;
         }
-        .content section:nth-child(1){
+
+        /* .content section:nth-child(1){
             left: -1000px;
         }
         .content section:nth-child(2){
@@ -61,61 +67,112 @@
         }
         .content section:nth-child(5){
             transform: rotate(-360deg) scale(0.1);
+        } */
+
+        @keyframes from-left {
+            from {
+                left: -1000px;
+            }
+            to {
+                left: 0;
+            }
         }
 
-        .content .board.from-left{
-            z-index: 5;
-            left: 0;
-            transition: all 1s;
+        @keyframes from-bottom {
+            from {
+                top: 700px;
+            }
+            to {
+                top: 0;
+            }
         }
-        .content .board.from-bottom{
-            z-index: 5;
-            top: 0;
-            transition: all 1s;
+
+        @keyframes zoom-in {
+            from {
+                transform: scale(0.1);
+            }
+            to {
+                transform: scale(1);
+            }
         }
-        .content .board.zoom-in{
+
+        @keyframes zoom-out {
+            from {
+                transform: scale(2);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rotate-zoom {
+            from {
+                transform: rotate(-360deg) scale(0.1);
+            }
+            to {
+                transform: rotate(0deg) scale(1);
+            }
+        }
+
+        .content .board.from-left {
             z-index: 5;
-            transform: scale(1);
-            transition: all 1s;
+            animation: from-left 1s ease-in;
 
         }
-        .content .board.zoom-out{
+
+        .content .board.from-bottom {
             z-index: 5;
-            transform: scale(1);
-            transition: all 1s;
+            animation: from-bottom 1s ease-in;
+
         }
-        .content .board.zoon-rotate{
+
+        .content .board.zoom-in {
             z-index: 5;
-            transform: rotate(0) scale(1);
-            transition: all 1s;
+            animation: zoom-in 1s ease-in-out;
+
         }
-        .content .board.previous{
+
+        .content .board.zoom-out {
+            z-index: 5;
+            animation: zoom-out 1s linear;
+        }
+
+        .content .board.zoon-rotate {
+            z-index: 5;
+            animation: rotate-zoom 1s linear;
+        }
+
+        .content .board.previous {
             z-index: 4;
         }
-        .active{
-            display: block!important;
-            transform: rotate(0deg) scale(1)!important;
-            left: 0!important;
-            top: 0!important;
+
+        .active {
+            display: block !important;
+            transform: rotate(0deg) scale(1) !important;
+            left: 0 !important;
+            top: 0 !important;
             transition: all 2s;
-            
+
         }
-        aside{
+
+        aside {
             position: absolute;
             padding-left: 100px;
             bottom: -50px;
             z-index: 10;
         }
-        aside section img,aside section{
+
+        aside section img,
+        aside section {
             width: 150px;
             height: 105px;
             cursor: pointer;
         }
-        aside section{            
+
+        aside section {
             float: left;
             padding-right: 10px;
         }
-        
     </style>
 </head>
 
@@ -123,32 +180,57 @@
     <div class="wrapper">
         <article>
             <section class="content" id="content">
-                    <section class="board from-left"><img src="./1.jpg" alt="" srcset=""></section>
-                    <section class="board"><img src="./2.jpg" alt="" srcset=""></section>
-                    <section class="board"><img src="./3.jpg" alt="" srcset=""></section>
-                    <section class="board"><img src="./4.jpg" alt="" srcset=""></section>
-                    <section class="board"><img src="./5.jpg" alt="" srcset=""></section>
+                <section class="board from-left">
+                    <img src="./1.jpg" alt="" srcset="">
+                </section>
+                <section class="board">
+                    <img src="./2.jpg" alt="" srcset="">
+                </section>
+                <section class="board">
+                    <img src="./3.jpg" alt="" srcset="">
+                </section>
+                <section class="board">
+                    <img src="./4.jpg" alt="" srcset="">
+                </section>
+                <section class="board">
+                    <img src="./5.jpg" alt="" srcset="">
+                </section>
             </section>
             <aside class="clearfix">
-                <section class="btn" data-id="0" data-effect="from-left"><img src="./1.jpg" alt="" srcset=""></section>
-                <section class="btn"  data-id="1" data-effect="from-bottom"><img src="./2.jpg" alt="" srcset=""></section>
-                <section class="btn" data-id="2"  data-effect="zoom-in"><img src="./3.jpg" alt="" srcset=""></section>
-                <section class="btn"  data-id="3" data-effect="zoom-out"><img src="./4.jpg" alt="" srcset=""></section>
-                <section class="btn" data-id="4"  data-effect="zoon-rotate"><img src="./5.jpg" alt="" srcset=""></section>
+                <section class="btn" data-id="0" data-effect="from-left">
+                    <img src="./1.jpg" alt="" srcset="">
+                </section>
+                <section class="btn" data-id="1" data-effect="from-bottom">
+                    <img src="./2.jpg" alt="" srcset="">
+                </section>
+                <section class="btn" data-id="2" data-effect="zoom-in">
+                    <img src="./3.jpg" alt="" srcset="">
+                </section>
+                <section class="btn" data-id="3" data-effect="zoom-out">
+                    <img src="./4.jpg" alt="" srcset="">
+                </section>
+                <section class="btn" data-id="4" data-effect="zoon-rotate">
+                    <img src="./5.jpg" alt="" srcset="">
+                </section>
             </aside>
         </article>
     </div>
     <script>
-        var boards=document.querySelectorAll("article .board")
-        var btns=document.querySelectorAll("article .btn")
-        var content=document.getElementById("content")
-        for(var btn of btns){
-            btn.onclick=function(event){ 
-                boards.forEach(function(item,index){item.className="board"})
-                boards[event.currentTarget.dataset.id].className="board "+event.currentTarget.dataset.effect 
+        var boards = document.querySelectorAll("article .board")
+        var btns = document.querySelectorAll("article .btn")
+        var content = document.getElementById("content")
+        for (var btn of btns) {
+            btn.onclick = function (event) {
+                boards.forEach(function (item, index) {
+                    if(item.classList.length==2){
+                        item.className = "board previous"
+                    }else{
+                        item.className = "board"
+                    }                   
+                })
+                boards[event.currentTarget.dataset.id].className = "board " + event.currentTarget.dataset.effect
             }
         }
-    
     </script>
 </body>
 
