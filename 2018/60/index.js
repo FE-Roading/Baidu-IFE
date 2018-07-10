@@ -14,5 +14,6 @@ rstOpen()
 setInterval(function () {
     if(getWaitCuNum()>5) return;
     getCus(randomNumber(1,5))
+    renderCusToDOM(Restaurant.getInstance().cusWaitList)
 },3000)
 
