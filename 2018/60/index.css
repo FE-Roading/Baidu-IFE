@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+.clearfix::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+body{
+    font-family: "PingFang SC", "华文行楷","Micrsoft YaHei", "宋体", monospace;
+    /* background: url("./index.jpg") center center no-repeat fixed; */
+    background-size: cover;
+
+}
+.title{
+    position: absolute;
+    left:50%; 
+    transform:translateX(-50%);
+    top: 0;
+    font-size: 50px;
+    line-height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 70px;
+    width: 150px;
+    background:url("./bg-150x70.jpg") center center no-repeat;
+}
+.wrapper{
+    width: 1000px;
+    margin:70px auto;
+    display: flex;
+    outline: 1px dotted green;
+}
+.wrapper .left-column{
+    width: 700px;
+    padding-right: 100px;
+    outline: 1px dotted green;
+}
+.left-column>div{
+    width: 100%;
+    padding: 50px;
+    outline: 1px dotted green;
+    position: relative;
+}
+.left-column .kitchen{
+    margin-bottom: 100px;
+}
+.left-column ul[id]{
+    display: flex;
+    flex-wrap: wrap;
+    outline: 1px solid #888;
+}
+#kitchen::after,#dining-area::after{
+    position: absolute;  
+    left: 50%;
+    top:50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 60px;
+    color: #888;
+    font-family: "iconfont" !important;
+}
+#kitchen::after{
+    content: "\e62e";
+}
+#dining-area::after{
+    content: "\e501";
+}
+#kitchen{
+    outline: none;
+}
+#kitchen>li{
+    width: 150px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
+#kitchen>li:nth-child(3n){
+    margin-right: 0;
+}
+
+#dining-area{
+    outline: none;
+}
+
+#dining-area>li{
+    width: 200px;
+    min-height: 200px;
+    display: grid;
+    margin-bottom: 50px;
+}
+#dining-area>li{    
+    grid-template-columns: 40px auto 40px auto 40px;
+    grid-template-rows: 40px auto 40px auto 40px;
+}
+#dining-area>li:nth-child(2n+1){
+    margin-right: 100px;
+}
+#dining-area>li>div{
+    border-radius: 50%;
+}
+#dining-area .desk{
+    border: 1px solid grey;
+}
+#dining-area>li .chair1{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+#dining-area>li.desk4 .chair2{
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+#dining-area>li.desk4 .chair3,
+#dining-area>li.desk2 .chair2{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 5;
+}
+#dining-area>li.desk4 .chair4{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+#dining-area .chair{
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    border: 1px solid grey;
+}
+#dining-area .chair::after{
+    position: absolute;  
+    left: 50%;
+    top:50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 45px;
+    color: #888;
+    font-family: "iconfont" !important;
+}
+#dining-area .chair.busy::after{
+    content: "\e601";
+}
+#dining-area .chair.busy{
+    font-family: "";
+    font-weight: bold;
+    color:blue;
+}
+
+#dining-area>li .desk{
+    grid-column-start: 2;
+    grid-column-end: span 3;
+    grid-row-start: 2;
+    grid-row-end: span 3;
+    border-radius: 25%;
+}
+
+#dining-area li.desk2 .desk{
+    border-radius: 15%;
+}
+#dining-area .desk .dish-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 14px;
+    outline: none;
+}
+#dining-area .desk .dish-container li{
+    font-family: ""!important;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 10px;    
+    font-family: "iconfont" !important;
+    position: relative;
+    color: gray;
+    cursor: pointer;
+}
+#dining-area .desk .dish-container li.eating{
+    color:green;
+}
+#dining-area .desk .dish-container li.eated{
+    color:black;
+}
+#dining-area .desk .dish-container li::after{
+    position: absolute;
+    content: "\e60b";
+    font-size: 40px;    
+    line-height: 40px;    
+    top: 0;
+    left: 0;
+    font-family: "iconfont" !important;
+}
+#dining-area .desk .dish-container li:nth-child(2n+1){
+    margin-right: 10px;
+}
+
+
+.wrapper .right-column{
+    width: 300px;
+    outline: 1px dotted green;
+}
+.right-column>div{
+    width: 100%;
+    padding: 25px;
+    outline: 1px dotted green;
+}
+.right-column .reception{
+    display: flex;
+    flex-wrap: wrap;
+}
+.right-column .reception>ul{
+    padding-top: 70px;
+    width: 50%;   
+    position: relative; 
+}
+.right-column .reception>ul:first-child{
+    padding-top: 0px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.right-column #waiter-area li{
+    width: 120px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    float: left;
+}
+.right-column  #waiter-area li:nth-child(2n+2){
+    margin-right: 0px;
+}
+
+.clock{
+    margin-left: 22px;
+}
+.right-column .dashboard{
+    height: 300px;
+    overflow: auto;
+    position: relative;
+    margin-bottom: 20px;
+}
+.right-column #company-account{
+    position:absolute;
+    bottom: 20px;
+}
+
+#payment::before,#reception::before{
+    font-size: 60px;
+    color: #888;    
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 0;
+    font-family: "iconfont" !important;
+}
+#payment::before{
+    content: "\e65b";
+}
+#reception::before{
+    content: "\e6c8";
+}
+#payment li, #reception li{
+    padding: 10px 10px 10px 35px;
+    position: relative;
+    
+}
+#payment  li:hover, #reception li:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+#payment li::after,#reception li::after{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    left: 0;
+    color: #888;
+    font-family: "iconfont" !important;
+    content: "\e601";
+}
+
+
+
+
+
+.person{
+    padding:10px 10px 10px 40px;
+    position: relative;
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 1px solid #777;
+    border-radius: 10px;
+    cursor: move;
+}
+.person::after{
+    position: absolute;    
+    font-size: 30px;      
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    font-family: "iconfont" !important;
+}
+.person:hover{
+    border: 1px solid #000;
+}
+.person .op{
+    display: inline-block;
+    margin-left: 5px;
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+}
+.person .op:hover{
+    color: aliceblue;
+    background-color: red;
+}
+.cook::after{
+    content: "\e502";
+}
+.waiter::after{
+    content: "\e646";
+}
