@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width: 600px;
+            margin: 100px auto;
+        }
+        #row1,#row2{
+            width: 600px;
+            height: 300px;;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="row1"></div>
+        <div id="row2"></div>
+    </div>
+    <script src="./lottie.js"></script>
+    <script>
+        var row1=document.getElementById("row1");
+        var row2=document.getElementById("row2");
+
+        bodymovin.loadAnimation({
+            container: row1, // 渲染动画的dom元素
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path:"./data.json" // 动画数据
+        });
+        bodymovin.loadAnimation({
+            container: row2, // 渲染动画的dom元素
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path:"./row2.json" // 动画数据
+        });
+    </script>
+</body>
+
+</html>
