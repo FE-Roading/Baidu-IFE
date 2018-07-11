@@ -140,6 +140,8 @@ function hashChange(){
     var hash=decodeURI(window.location.hash)
     hash=hash.replace(/[\#\w\=]/g,"").replace(/\&/g,"-")
     hash=hash.split("-")
+    console.log('hashChange',hash)
+    if(hash.length<=1) return
     for(var i in hash){
         chkCheckOneByID(hash[i])
     }
